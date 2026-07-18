@@ -6,260 +6,534 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Audrey Benjamin Gutierrez | IT ePortfolio</title>
+    <title>Home | Audrey Benjamin Gutierrez</title>
+
+    <meta name="description" content="Academic ePortfolio of Audrey Benjamin Gutierrez">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
 
-<div class="container">
+        <div class="container-custom">
 
-<a class="navbar-brand fw-bold text-primary" href="index.html">
+            <a class="navbar-brand" href="index.html">
 
-ABG
+                <img src="images/jru.jpg" alt="Jose Rizal University Logo" class="navbar-logo">
 
-</a>
+            </a>
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
 
-<span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
 
-</button>
+            </button>
 
-<div class="collapse navbar-collapse" id="navMenu">
+            <div class="collapse navbar-collapse" id="navbar">
 
-<ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-<li class="nav-item">
-<a class="nav-link active" href="index.html">Home</a>
-</li>
+                    <li class="nav-item">
 
-<li class="nav-item">
-<a class="nav-link" href="about.html">About</a>
-</li>
+                        <a class="nav-link active" href="index.html">
 
-<li class="nav-item">
-<a class="nav-link" href="itcc508.html">ITCC508</a>
-</li>
+                            Home
 
-<li class="nav-item">
-<a class="nav-link" href="projects.html">Projects</a>
-</li>
+                        </a>
 
-<li class="nav-item">
-<a class="nav-link" href="reflections.html">Reflections</a>
-</li>
+                    </li>
 
-<li class="nav-item">
-<a class="nav-link" href="certificates.html">Certificates</a>
-</li>
+                    <li class="nav-item">
 
-<li class="nav-item">
-<a class="nav-link" href="contact.html">Contact</a>
-</li>
+                        <a class="nav-link" href="about.html">
 
-</ul>
+                            About
 
-</div>
+                        </a>
 
-</div>
+                    </li>
 
-</nav>
+                    <li class="nav-item">
 
-<!-- HERO -->
+                        <a class="nav-link" href="expectations.html">
 
-<section class="hero">
+                            Course Expectations
 
-<div class="container">
+                        </a>
 
-<div class="row align-items-center">
+                    </li>
 
-<div class="col-lg-6">
+                    <li class="nav-item ms-lg-3">
 
-<h5 class="text-primary">
+                        <button id="darkModeToggle" class="btn-icon" aria-label="Toggle Dark Mode">
 
-WELCOME TO MY PORTFOLIO
+                            <i class="bi bi-moon-stars-fill"></i>
 
-</h5>
+                        </button>
 
-<h1>
+                    </li>
 
-Audrey Benjamin<br>
+                </ul>
 
-Gutierrez
+            </div>
 
-</h1>
+        </div>
 
-<h3>
+    </nav>
 
-Bachelor of Science in Information Technology
+    <!-- ==========================================
+         HERO
+    =========================================== -->
 
-</h3>
+    <section class="hero">
 
-<p>
+        <div class="container-custom">
 
-This ePortfolio showcases my academic journey, projects,
-assignments, reflections, and achievements throughout my
-studies. It serves as a collection of my learning experiences
-and professional growth.
+            <div class="row align-items-center g-5">
 
-</p>
+                <div class="col-lg-6 fade-up">
 
-<a href="about.html" class="btn btn-primary btn-lg">
+                    <span class="badge-soft">
 
-About Me
+                        Academic ePortfolio
 
-</a>
+                    </span>
 
-<a href="itcc508.html" class="btn btn-outline-primary btn-lg ms-2">
+                    <h1>
 
-ITCC508
+                        Hi, I'm
+                        <span class="gradient-text">
+                            Audrey Benjamin Gutierrez
+                        </span>
 
-</a>
+                    </h1>
 
-</div>
+                    <p class="hero-text">
 
-<div class="col-lg-6 text-center">
+                        Welcome to my academic ePortfolio. This website
+                        showcases my background, educational journey,
+                        technical skills, and course expectations for
+                        ITC-C508 as a Bachelor of Science in Information
+                        Technology student.
 
-<img src="images/profile.jpg"
-class="img-fluid hero-image">
+                    </p>
 
-</div>
+                    <div class="hero-buttons">
 
-</div>
+                        <a href="about.html" class="btn-primary-custom">
 
-</div>
+                            About Me
 
-</section>
+                        </a>
 
-<!-- FEATURES -->
+                        <a href="expectations.html" class="btn-outline-custom">
 
-<section class="py-5">
+                            Course Expectations
 
-<div class="container">
+                        </a>
 
-<h2 class="text-center mb-5">
+                    </div>
 
-Explore My Portfolio
+                </div>
 
-</h2>
+                <div class="col-lg-6 text-center fade-up">
 
-<div class="row">
+                    <img src="images/profile.jpg" alt="Audrey Benjamin Gutierrez" class="hero-image img-fluid">
 
-<div class="col-md-4">
+                </div>
 
-<div class="card h-100 shadow">
+            </div>
 
-<div class="card-body text-center">
+        </div>
 
-<i class="bi bi-journal-bookmark fs-1 text-primary"></i>
+    </section>
 
-<h4 class="mt-3">
+    <!-- ==========================================
+         ABOUT PREVIEW
+    =========================================== -->
 
-ITCC508
+    <section>
 
-</h4>
+        <div class="container-custom">
 
-<p>
+            <div class="section-header fade-up">
 
-Weekly activities, assignments,
-course expectations and outputs.
+                <span>About Me</span>
 
-</p>
+                <h2>Get to Know Me</h2>
 
-</div>
+                <p>
 
-</div>
+                    I am an aspiring Information Technology student who enjoys
+                    learning modern technologies, solving problems, and
+                    continuously improving my technical and professional skills.
 
-</div>
+                </p>
 
-<div class="col-md-4">
+            </div>
 
-<div class="card h-100 shadow">
+            <div class="row align-items-center g-5">
 
-<div class="card-body text-center">
+                <div class="col-lg-6 fade-up">
 
-<i class="bi bi-code-slash fs-1 text-primary"></i>
+                    <img src="images/profile.jpg" alt="Profile Picture" class="img-fluid rounded-4 shadow-soft">
 
-<h4 class="mt-3">
+                </div>
 
-Projects
+                <div class="col-lg-6 fade-up">
 
-</h4>
+                    <h3>
 
-<p>
+                        Audrey Benjamin Gutierrez
 
-Academic and personal projects
-that demonstrate my technical skills.
+                    </h3>
 
-</p>
+                    <p>
 
-</div>
+                        I am currently pursuing a Bachelor of Science in
+                        Information Technology. This academic ePortfolio serves
+                        as a collection of my learning experiences, coursework,
+                        and personal growth throughout my studies.
 
-</div>
+                    </p>
 
-</div>
+                    <a href="about.html" class="btn-primary-custom">
 
-<div class="col-md-4">
+                        Learn More
 
-<div class="card h-100 shadow">
+                    </a>
 
-<div class="card-body text-center">
+                </div>
 
-<i class="bi bi-award fs-1 text-primary"></i>
+            </div>
 
-<h4 class="mt-3">
+        </div>
 
-Certificates
+    </section>
 
-</h4>
+    <!-- ==========================================
+         SKILLS
+    =========================================== -->
 
-<p>
+    <section class="bg-white">
 
-Training certificates,
-seminars, and accomplishments.
+        <div class="container-custom">
 
-</p>
+            <div class="section-header fade-up">
 
-</div>
+                <span>Skills</span>
 
-</div>
+                <h2>Technical Skills</h2>
 
-</div>
+                <p>
 
-</div>
+                    Technologies and tools that I am currently learning and
+                    developing during my academic journey.
 
-</div>
+                </p>
 
-</section>
+            </div>
 
-<footer>
+            <div class="dashboard-grid">
 
-<p>
+                <div class="dashboard-card fade-up">
 
-© 2026 Audrey Benjamin Gutierrez • All Rights Reserved
+                    <i class="bi bi-filetype-html"></i>
 
-</p>
+                    <h3>HTML5</h3>
 
-</footer>
+                    <p>Building semantic and accessible web pages.</p>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+                </div>
+
+                <div class="dashboard-card fade-up">
+
+                    <i class="bi bi-filetype-css"></i>
+
+                    <h3>CSS3</h3>
+
+                    <p>Creating responsive and modern user interfaces.</p>
+
+                </div>
+
+                <div class="dashboard-card fade-up">
+
+                    <i class="bi bi-bootstrap-fill"></i>
+
+                    <h3>Bootstrap 5</h3>
+
+                    <p>Developing responsive layouts quickly and efficiently.</p>
+
+                </div>
+
+                <div class="dashboard-card fade-up">
+
+                    <i class="bi bi-filetype-js"></i>
+
+                    <h3>JavaScript</h3>
+
+                    <p>Adding interactivity and dynamic functionality.</p>
+
+                </div>
+
+                <div class="dashboard-card fade-up">
+
+                    <i class="bi bi-git"></i>
+
+                    <h3>Git & GitHub</h3>
+
+                    <p>Learning version control and collaborative development.</p>
+
+                </div>
+
+                <div class="dashboard-card fade-up">
+
+                    <i class="bi bi-laptop"></i>
+
+                    <h3>Responsive Design</h3>
+
+                    <p>Designing websites that work across all devices.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         COURSE EXPECTATIONS PREVIEW
+    =========================================== -->
+
+    <section>
+
+        <div class="container-custom">
+
+            <div class="glass p-5 text-center fade-up">
+
+                <span class="badge-soft">
+
+                    ITC-C508
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Course Expectations
+
+                </h2>
+
+                <p class="mt-3">
+
+                    This section contains my responses to the required course
+                    questions together with my personal learning expectations
+                    and reflections throughout the semester.
+
+                </p>
+
+                <a href="expectations.html" class="btn-primary-custom mt-3">
+
+                    View Course Expectations
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         CALL TO ACTION
+    =========================================== -->
+
+    <section class="bg-white">
+
+        <div class="container-custom">
+
+            <div class="glass text-center p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Thank You for Visiting
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Continue Exploring My Portfolio
+
+                </h2>
+
+                <p class="mt-3">
+
+                    Thank you for taking the time to explore my academic
+                    ePortfolio. I invite you to learn more about my educational
+                    background and view my course expectations for ITC-C508.
+
+                </p>
+
+                <div class="hero-buttons justify-content-center mt-4">
+
+                    <a href="about.html" class="btn-primary-custom">
+
+                        About Me
+
+                    </a>
+
+                    <a href="expectations.html" class="btn-outline-custom">
+
+                        Course Expectations
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="container-custom">
+
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+
+                    <h5>
+
+                        Audrey Portfolio
+
+                    </h5>
+
+                    <p>
+
+                        An academic ePortfolio showcasing my educational
+                        journey, technical skills, and learning expectations
+                        as a Bachelor of Science in Information Technology
+                        student.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+
+                            Home
+
+                        </a>
+
+                        <a href="about.html">
+
+                            About
+
+                        </a>
+
+                        <a href="expectations.html">
+
+                            Course Expectations
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Student
+
+                    </h5>
+
+                    <p>
+
+                        Audrey Benjamin Gutierrez<br>
+
+                        Bachelor of Science in Information Technology
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="footer-bottom text-center">
+
+                <p class="mb-0">
+
+                    &copy;
+                    <span id="year"></span>
+
+                    Audrey Benjamin Gutierrez.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+         BACK TO TOP
+    =========================================== -->
+
+    <button id="backToTop" aria-label="Back To Top">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </button>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
 
 </body>
 
