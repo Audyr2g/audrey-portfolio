@@ -1560,64 +1560,6 @@ body.dark-mode .artifact-frame {
 
 }
 
-/* ==========================================================
-   STAT TILES
-========================================================== */
-
-.stat-row {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-
-    gap: 26px;
-
-}
-
-.stat-tile {
-
-    padding: 30px 24px;
-
-    text-align: center;
-
-    background: var(--surface);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow-sm);
-
-}
-
-.stat-value {
-
-    display: block;
-
-    font-size: 2.3rem;
-
-    font-weight: 700;
-
-    line-height: 1.2;
-
-    color: var(--primary);
-
-}
-
-.stat-label {
-
-    display: block;
-
-    margin-top: 10px;
-
-    font-size: .88rem;
-
-    line-height: 1.6;
-
-    color: var(--text-light);
-
-}
-
 
 /* ==========================================================
    PRINT
