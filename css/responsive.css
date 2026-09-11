@@ -360,6 +360,107 @@
 }
 
 /* ==========================================================
+   PRELIM ARTIFACTS
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .artifact-frame {
+
+        height: 560px;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .artifact-frame {
+
+        height: 440px;
+
+    }
+
+    .gallery-item img {
+
+        height: 200px;
+
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .artifact-frame {
+
+        height: 360px;
+
+        margin: 24px 0;
+
+    }
+
+    .artifact-actions {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .artifact-actions .btn-primary-custom,
+    .artifact-actions .btn-outline-custom {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+    .file-meta {
+
+        justify-content: center;
+
+    }
+
+    .artifact-caption {
+
+        grid-template-columns: 1fr;
+
+        gap: 2px;
+
+        padding: 20px 22px;
+
+    }
+
+    .artifact-caption dt {
+
+        line-height: 1.8;
+
+        margin-top: 10px;
+
+    }
+
+    .artifact-caption dd {
+
+        line-height: 1.7;
+
+    }
+
+    .stat-value {
+
+        font-size: 1.9rem;
+
+    }
+
+    .viz-root {
+
+        padding: 20px 16px;
+
+    }
+
+}
+
+/* ==========================================================
    LANDSCAPE PHONES
 ========================================================== */
 

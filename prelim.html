@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prelim Output | Audrey Benjamin Gutierrez</title>
+
+    <meta name="description"
+        content="Prelim Output for ITC-C508: neural network training experiments, technical reports, training logs, and learning reflections by Audrey Benjamin Gutierrez.">
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        <div class="container-custom">
+
+            <a class="navbar-brand" href="index.html">
+
+                <img src="images/jru.jpg" alt="Jose Rizal University Logo" class="navbar-logo">
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="about.html">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="expectations.html">
+
+                            Course Expectations
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="prelim.html">
+
+                            Prelim Output
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+
+                        <button id="darkModeToggle" class="btn-icon" aria-label="Toggle Dark Mode">
+
+                            <i class="bi bi-moon-stars-fill"></i>
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <section class="page-banner">
+
+        <div class="container-custom text-center">
+
+            <span class="badge-soft">
+
+                ITC-C508 &middot; Prelim Period
+
+            </span>
+
+            <h1>
+
+                Prelim Output
+
+            </h1>
+
+            <p>
+
+                This page presents the complete set of work I produced during
+                the Prelim period of ITC-C508. It documents a single connected
+                investigation: building a text classifier without code, rebuilding
+                it as an explicit neural network in Keras, and measuring what that
+                additional control actually bought me.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         PURPOSE
+    =========================================== -->
+
+    <section>
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Purpose</span>
+
+                <h2>What This Page Contains</h2>
+
+                <p>
+
+                    Every artifact below was produced by me for ITC-C508 between
+                    24 July and 14 August 2026. Each one is captioned with its
+                    title, author, and date, can be read directly on this page,
+                    and can also be opened or downloaded in its original format.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-5 fade-up">
+
+                <p>
+
+                    The Prelim work follows one continuous thread. In
+                    <strong>Exercise PT-P1</strong> I trained a three-class
+                    airline sentiment classifier using a no-code platform and
+                    tested how it behaved on clear, ambiguous, and
+                    out-of-vocabulary language. In <strong>Exercise PT-P2</strong>
+                    I rebuilt that same classifier as an explicit feedforward
+                    neural network in Keras and ran twenty controlled experiments
+                    to try to beat the no-code benchmark. <strong>Exercise
+                    WW-P2</strong> supplied the natural language processing
+                    theory underneath both, completed through a Microsoft Learn
+                    module and its accompanying text analytics activities.
+
+                </p>
+
+                <p class="mb-0">
+
+                    Read together, these artifacts show a progression from using
+                    a tool to understanding what the tool was doing, and then to
+                    measuring the limits of that understanding.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         ARTIFACT INDEX
+    =========================================== -->
+
+    <section class="bg-white">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Navigation</span>
+
+                <h2>Artifact Index</h2>
+
+                <p>
+
+                    Seven artifacts are published on this page. Select any item
+                    to jump directly to it.
+
+                </p>
+
+            </div>
+
+            <nav class="artifact-index fade-up" aria-label="Artifact Index">
+
+                <a href="#artifact-1">
+
+                    <i class="bi bi-file-earmark-text"></i>
+
+                    <span>1. PT-P2 Technical Report</span>
+
+                </a>
+
+                <a href="#artifact-2">
+
+                    <i class="bi bi-journal-code"></i>
+
+                    <span>2. PT-P2 Keras Notebook</span>
+
+                </a>
+
+                <a href="#artifact-3">
+
+                    <i class="bi bi-table"></i>
+
+                    <span>3. PT-P2 Training Log</span>
+
+                </a>
+
+                <a href="#artifact-4">
+
+                    <i class="bi bi-file-earmark-text"></i>
+
+                    <span>4. PT-P1 Technical Report</span>
+
+                </a>
+
+                <a href="#artifact-5">
+
+                    <i class="bi bi-clipboard-data"></i>
+
+                    <span>5. PT-P1 Test Results Log</span>
+
+                </a>
+
+                <a href="#artifact-6">
+
+                    <i class="bi bi-chat-square-quote"></i>
+
+                    <span>6. WW-P2 NLP Reflection</span>
+
+                </a>
+
+                <a href="#artifact-7">
+
+                    <i class="bi bi-award"></i>
+
+                    <span>7. Microsoft Learn Certificate</span>
+
+                </a>
+
+                <a href="#reflection">
+
+                    <i class="bi bi-lightbulb"></i>
+
+                    <span>Learning Reflection</span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         KEY RESULTS
+    =========================================== -->
+
+    <section>
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>At a Glance</span>
+
+                <h2>Key Results</h2>
+
+                <p>
+
+                    The four figures that summarise the Prelim investigation.
+
+                </p>
+
+            </div>
+
+            <div class="stat-row fade-up">
+
+                <div class="stat-tile">
+
+                    <span class="stat-value">20</span>
+
+                    <span class="stat-label">
+
+                        Controlled experiments logged, from EXP-001 to EXP-15B
+
+                    </span>
+
+                </div>
+
+                <div class="stat-tile">
+
+                    <span class="stat-value">91.67%</span>
+
+                    <span class="stat-label">
+
+                        Test accuracy of the PT-P1 no-code benchmark I had to beat
+
+                    </span>
+
+                </div>
+
+                <div class="stat-tile">
+
+                    <span class="stat-value">0.9076</span>
+
+                    <span class="stat-label">
+
+                        Best validation weighted F1-score, reached by five separate
+                        configurations
+
+                    </span>
+
+                </div>
+
+                <div class="stat-tile">
+
+                    <span class="stat-value">0.8296</span>
+
+                    <span class="stat-label">
+
+                        Test F1-score of the champion model, EXP-11
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         EXERCISE PT-P2
+    =========================================== -->
+
+    <section class="bg-white">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Exercise PT-P2</span>
+
+                <h2>Code-Based Neural Network Training</h2>
+
+                <p>
+
+                    Rebuilding the PT-P1 classifier as an explicit Keras
+                    feedforward network, then tuning it across twenty
+                    experiments covering architecture, optimisation,
+                    regularisation, and dataset size.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 1 -->
+
+    <section id="artifact-1">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 1
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Hands-On Neural Network Training, Experiment Logging, and
+                    Loss Diagnosis
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        Hands-On Neural Network Training, Experiment Logging, and
+                        Loss Diagnosis
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>14 August 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>IEEE-format technical report, PDF, 5 pages</dd>
+
+                </dl>
+
+                <p>
+
+                    This report is the central artifact of my Prelim output. It
+                    documents the full investigation: the architecture I built,
+                    the twenty experiments I ran, the loss curves I used to
+                    diagnose underfitting and overfitting, and the conclusion I
+                    reached about validation-based model selection on a small
+                    dataset.
+
+                </p>
+
+                <p>
+
+                    It matters because it records a result I did not expect.
+                    Five different configurations tied at a validation weighted
+                    F1-score between 0.9051 and 0.9076, yet their test
+                    F1-scores ranged from 0.5281 to 0.8296. Writing the report
+                    forced me to explain that gap honestly rather than simply
+                    reporting the best number I had produced.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/prelim/ptp2-ieee-report.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-file-earmark-pdf"></i>
+
+                            <p>
+
+                                Your browser cannot display this document inline.
+                                Please use the buttons below to open or download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/prelim/ptp2-ieee-report.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Report
+
+                    </a>
+
+                    <a href="files/prelim/ptp2-ieee-report.pdf" class="btn-outline-custom" download>
+
+                        Download Report
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+
+                        PDF &middot; 5 pages &middot; 586 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 2 -->
+
+    <section class="bg-white" id="artifact-2">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 2
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Neural Network Training and Testing Notebook
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        Neural Network Training &amp; Testing &mdash; Airline
+                        Sentiment Classifier
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>12 August 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Jupyter notebook, 23 cells, Keras and TensorFlow</dd>
+
+                </dl>
+
+                <p>
+
+                    This is the code that produced every experiment in the
+                    report. The notebook implements the complete pipeline:
+                    loading the dataset, building a vocabulary, configuring
+                    hyperparameters, assembling an
+                    Embedding&ndash;GlobalAveragePooling1D&ndash;Dense&ndash;Dropout&ndash;Dense
+                    model, compiling it with Adam or SGD, training it,
+                    evaluating it on validation and held-out test data, and
+                    plotting the loss curves.
+
+                </p>
+
+                <p>
+
+                    Every code cell is preceded by a markdown cell explaining
+                    what it does and why. I wrote those explanations deliberately,
+                    because the exercise asked me to identify where feature
+                    extraction, the forward pass, loss calculation, and the
+                    backward pass actually happen &mdash; steps the no-code
+                    platform in PT-P1 hides completely.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <iframe src="files/prelim/ptp2-neural-network-notebook.html"
+                        title="Neural Network Training and Testing Notebook" loading="lazy"></iframe>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/prelim/ptp2-neural-network-notebook.html" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Notebook
+
+                    </a>
+
+                    <a href="files/prelim/ptp2-neural-network-notebook.ipynb" class="btn-outline-custom" download>
+
+                        Download .ipynb
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-journal-code"></i>
+
+                        Jupyter Notebook &middot; 23 cells &middot; 31 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 3 -->
+
+    <section id="artifact-3">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 3
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Feedforward Backpropagation Training Log
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        Feedforward Backpropagation Training Log &mdash; Airline
+                        Sentiment Dataset
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>11&ndash;12 August 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Excel workbook, 20 logged experiments across 26 fields</dd>
+
+                </dl>
+
+                <p>
+
+                    Every experiment was recorded in this log immediately after
+                    it finished, with its hyperparameters, losses, accuracy,
+                    precision, recall, weighted F1-score, test F1-score,
+                    training time, random seed, and a written note on what the
+                    run was testing. Keeping the log is what made the twenty
+                    runs into a study rather than twenty separate attempts.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Validation Scores Did Not Predict Test Scores
+
+                </h3>
+
+                <p>
+
+                    The chart below plots each experiment twice: its validation
+                    weighted F1-score and its test F1-score. The distance between
+                    the two dots on a row is the size of that experiment's
+                    generalisation gap. From EXP-9 onward the validation scores
+                    cluster tightly at the top while the test scores stay
+                    scattered, which is the central finding of the report.
+
+                </p>
+
+                <div class="viz-root fade-up">
+
+                    <div class="viz-legend">
+
+                        <span>
+
+                            <span class="viz-swatch viz-swatch--val" aria-hidden="true"></span>
+
+                            Validation weighted F1
+
+                        </span>
+
+                        <span>
+
+                            <span class="viz-swatch viz-swatch--test" aria-hidden="true"></span>
+
+                            Test F1
+
+                        </span>
+
+                    </div>
+
+                    <svg class="viz-svg" viewBox="0 0 900 700" role="img" aria-labelledby="chartTitle chartDesc" preserveAspectRatio="xMidYMid meet">
+                    <title id="chartTitle">Validation weighted F1 versus test F1 for twenty experiments</title>
+                    <desc id="chartDesc">Each row is one experiment. The blue dot is the validation weighted F1-score and the orange dot is the test F1-score. Validation scores rise to 0.9076 across later experiments while test scores stay between 0.53 and 0.83, showing that validation performance overstated true generalization.</desc>
+                    <line class="viz-grid" x1="92.0" y1="48" x2="92.0" y2="654"/>
+                    <text class="viz-tick" x="92.0" y="676" text-anchor="middle">0.0</text>
+                    <line class="viz-grid" x1="244.8" y1="48" x2="244.8" y2="654"/>
+                    <text class="viz-tick" x="244.8" y="676" text-anchor="middle">0.2</text>
+                    <line class="viz-grid" x1="397.6" y1="48" x2="397.6" y2="654"/>
+                    <text class="viz-tick" x="397.6" y="676" text-anchor="middle">0.4</text>
+                    <line class="viz-grid" x1="550.4" y1="48" x2="550.4" y2="654"/>
+                    <text class="viz-tick" x="550.4" y="676" text-anchor="middle">0.6</text>
+                    <line class="viz-grid" x1="703.2" y1="48" x2="703.2" y2="654"/>
+                    <text class="viz-tick" x="703.2" y="676" text-anchor="middle">0.8</text>
+                    <line class="viz-grid" x1="856.0" y1="48" x2="856.0" y2="654"/>
+                    <text class="viz-tick" x="856.0" y="676" text-anchor="middle">1.0</text>
+                    <text class="viz-axis-label" x="474.0" y="690" text-anchor="middle">F1-score</text>
+                    <rect class="viz-band" x="92" y="58.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="76.8" text-anchor="end">EXP-001</text>
+                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="79.8" r="5.5" tabindex="0" role="img" aria-label="EXP-001 test F1 0.7007" data-run="EXP-001" data-series="Test F1" data-value="0.7007" data-acc="0.5714"/>
+                    <circle class="viz-dot viz-dot--val" cx="627.3" cy="65.8" r="5.5" tabindex="0" role="img" aria-label="EXP-001 validation weighted F1 0.7007" data-run="EXP-001" data-series="Validation weighted F1" data-value="0.7007" data-acc="0.5714"/>
+                    <text class="viz-rowlabel" x="78" y="106.2" text-anchor="end">EXP-002</text>
+                    <line class="viz-connector" x1="146.5" y1="102.2" x2="364.8" y2="102.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="364.8" cy="102.2" r="5.5" tabindex="0" role="img" aria-label="EXP-002 test F1 0.3571" data-run="EXP-002" data-series="Test F1" data-value="0.3571" data-acc="0.1429"/>
+                    <circle class="viz-dot viz-dot--val" cx="146.5" cy="102.2" r="5.5" tabindex="0" role="img" aria-label="EXP-002 validation weighted F1 0.0714" data-run="EXP-002" data-series="Validation weighted F1" data-value="0.0714" data-acc="0.1429"/>
+                    <rect class="viz-band" x="92" y="117.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="135.8" text-anchor="end">EXP-003</text>
+                    <line class="viz-connector" x1="484.9" y1="131.8" x2="550.4" y2="131.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="550.4" cy="131.8" r="5.5" tabindex="0" role="img" aria-label="EXP-003 test F1 0.6000" data-run="EXP-003" data-series="Test F1" data-value="0.6000" data-acc="0.5714"/>
+                    <circle class="viz-dot viz-dot--val" cx="484.9" cy="131.8" r="5.5" tabindex="0" role="img" aria-label="EXP-003 validation weighted F1 0.5143" data-run="EXP-003" data-series="Validation weighted F1" data-value="0.5143" data-acc="0.5714"/>
+                    <text class="viz-rowlabel" x="78" y="165.2" text-anchor="end">EXP-004</text>
+                    <line class="viz-connector" x1="510.4" y1="161.2" x2="627.3" y2="161.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="161.2" r="5.5" tabindex="0" role="img" aria-label="EXP-004 test F1 0.7007" data-run="EXP-004" data-series="Test F1" data-value="0.7007" data-acc="0.5714"/>
+                    <circle class="viz-dot viz-dot--val" cx="510.4" cy="161.2" r="5.5" tabindex="0" role="img" aria-label="EXP-004 validation weighted F1 0.5476" data-run="EXP-004" data-series="Validation weighted F1" data-value="0.5476" data-acc="0.5714"/>
+                    <rect class="viz-band" x="92" y="176.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="194.8" text-anchor="end">EXP-05A</text>
+                    <line class="viz-connector" x1="510.4" y1="190.8" x2="627.3" y2="190.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="190.8" r="5.5" tabindex="0" role="img" aria-label="EXP-05A test F1 0.7007" data-run="EXP-05A" data-series="Test F1" data-value="0.7007" data-acc="0.5714"/>
+                    <circle class="viz-dot viz-dot--val" cx="510.4" cy="190.8" r="5.5" tabindex="0" role="img" aria-label="EXP-05A validation weighted F1 0.5476" data-run="EXP-05A" data-series="Validation weighted F1" data-value="0.5476" data-acc="0.5714"/>
+                    <text class="viz-rowlabel" x="78" y="224.2" text-anchor="end">EXP-05B</text>
+                    <line class="viz-connector" x1="397.6" y1="220.2" x2="627.3" y2="220.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="220.2" r="5.5" tabindex="0" role="img" aria-label="EXP-05B test F1 0.7007" data-run="EXP-05B" data-series="Test F1" data-value="0.7007" data-acc="0.4286"/>
+                    <circle class="viz-dot viz-dot--val" cx="397.6" cy="220.2" r="5.5" tabindex="0" role="img" aria-label="EXP-05B validation weighted F1 0.4000" data-run="EXP-05B" data-series="Validation weighted F1" data-value="0.4000" data-acc="0.4286"/>
+                    <rect class="viz-band" x="92" y="235.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="253.8" text-anchor="end">EXP-006A</text>
+                    <line class="viz-connector" x1="452.5" y1="249.8" x2="714.0" y2="249.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="452.5" cy="249.8" r="5.5" tabindex="0" role="img" aria-label="EXP-006A test F1 0.4719" data-run="EXP-006A" data-series="Test F1" data-value="0.4719" data-acc="0.8182"/>
+                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="249.8" r="5.5" tabindex="0" role="img" aria-label="EXP-006A validation weighted F1 0.8141" data-run="EXP-006A" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
+                    <text class="viz-rowlabel" x="78" y="283.2" text-anchor="end">EXP-006B</text>
+                    <line class="viz-connector" x1="452.5" y1="279.2" x2="714.0" y2="279.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="452.5" cy="279.2" r="5.5" tabindex="0" role="img" aria-label="EXP-006B test F1 0.4719" data-run="EXP-006B" data-series="Test F1" data-value="0.4719" data-acc="0.8182"/>
+                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="279.2" r="5.5" tabindex="0" role="img" aria-label="EXP-006B validation weighted F1 0.8141" data-run="EXP-006B" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
+                    <rect class="viz-band" x="92" y="294.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="312.8" text-anchor="end">EXP-007</text>
+                    <line class="viz-connector" x1="522.5" y1="308.8" x2="714.0" y2="308.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="522.5" cy="308.8" r="5.5" tabindex="0" role="img" aria-label="EXP-007 test F1 0.5635" data-run="EXP-007" data-series="Test F1" data-value="0.5635" data-acc="0.8182"/>
+                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="308.8" r="5.5" tabindex="0" role="img" aria-label="EXP-007 validation weighted F1 0.8141" data-run="EXP-007" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
+                    <text class="viz-rowlabel" x="78" y="342.2" text-anchor="end">EXP-08A</text>
+                    <line class="viz-connector" x1="219.4" y1="338.2" x2="240.1" y2="338.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="219.4" cy="338.2" r="5.5" tabindex="0" role="img" aria-label="EXP-08A test F1 0.1667" data-run="EXP-08A" data-series="Test F1" data-value="0.1667" data-acc="0.3636"/>
+                    <circle class="viz-dot viz-dot--val" cx="240.1" cy="338.2" r="5.5" tabindex="0" role="img" aria-label="EXP-08A validation weighted F1 0.1939" data-run="EXP-08A" data-series="Validation weighted F1" data-value="0.1939" data-acc="0.3636"/>
+                    <rect class="viz-band" x="92" y="353.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="371.8" text-anchor="end">EXP-08B</text>
+                    <line class="viz-connector" x1="376.1" y1="367.8" x2="502.4" y2="367.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="376.1" cy="367.8" r="5.5" tabindex="0" role="img" aria-label="EXP-08B test F1 0.3718" data-run="EXP-08B" data-series="Test F1" data-value="0.3718" data-acc="0.6364"/>
+                    <circle class="viz-dot viz-dot--val" cx="502.4" cy="367.8" r="5.5" tabindex="0" role="img" aria-label="EXP-08B validation weighted F1 0.5372" data-run="EXP-08B" data-series="Validation weighted F1" data-value="0.5372" data-acc="0.6364"/>
+                    <text class="viz-rowlabel" x="78" y="401.2" text-anchor="end">EXP-9</text>
+                    <line class="viz-connector" x1="586.7" y1="397.2" x2="785.4" y2="397.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="586.7" cy="397.2" r="5.5" tabindex="0" role="img" aria-label="EXP-9 test F1 0.6475" data-run="EXP-9" data-series="Test F1" data-value="0.6475" data-acc="0.9091"/>
+                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="397.2" r="5.5" tabindex="0" role="img" aria-label="EXP-9 validation weighted F1 0.9076" data-run="EXP-9" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
+                    <rect class="viz-band" x="92" y="412.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="430.8" text-anchor="end">EXP-10</text>
+                    <line class="viz-connector" x1="522.5" y1="426.8" x2="783.5" y2="426.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="522.5" cy="426.8" r="5.5" tabindex="0" role="img" aria-label="EXP-10 test F1 0.5635" data-run="EXP-10" data-series="Test F1" data-value="0.5635" data-acc="0.9091"/>
+                    <circle class="viz-dot viz-dot--val" cx="783.5" cy="426.8" r="5.5" tabindex="0" role="img" aria-label="EXP-10 validation weighted F1 0.9051" data-run="EXP-10" data-series="Validation weighted F1" data-value="0.9051" data-acc="0.9091"/>
+                    <text class="viz-rowlabel" x="78" y="460.2" text-anchor="end">EXP-11</text>
+                    <line class="viz-connector" x1="725.8" y1="456.2" x2="785.4" y2="456.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="725.8" cy="456.2" r="5.5" tabindex="0" role="img" aria-label="EXP-11 test F1 0.8296" data-run="EXP-11" data-series="Test F1" data-value="0.8296" data-acc="0.9091"/>
+                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="456.2" r="5.5" tabindex="0" role="img" aria-label="EXP-11 validation weighted F1 0.9076" data-run="EXP-11" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
+                    <text class="viz-callout" x="711.8" y="460.2" text-anchor="end">champion &#183; 0.8296</text>
+                    <rect class="viz-band" x="92" y="471.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="489.8" text-anchor="end">EXP-12</text>
+                    <line class="viz-connector" x1="582.3" y1="485.8" x2="785.4" y2="485.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="582.3" cy="485.8" r="5.5" tabindex="0" role="img" aria-label="EXP-12 test F1 0.6417" data-run="EXP-12" data-series="Test F1" data-value="0.6417" data-acc="0.9091"/>
+                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="485.8" r="5.5" tabindex="0" role="img" aria-label="EXP-12 validation weighted F1 0.9076" data-run="EXP-12" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
+                    <text class="viz-rowlabel" x="78" y="519.2" text-anchor="end">EXP-13</text>
+                    <line class="viz-connector" x1="495.5" y1="515.2" x2="785.4" y2="515.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="495.5" cy="515.2" r="5.5" tabindex="0" role="img" aria-label="EXP-13 test F1 0.5281" data-run="EXP-13" data-series="Test F1" data-value="0.5281" data-acc="0.9091"/>
+                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="515.2" r="5.5" tabindex="0" role="img" aria-label="EXP-13 validation weighted F1 0.9076" data-run="EXP-13" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
+                    <rect class="viz-band" x="92" y="530.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="548.8" text-anchor="end">EXP-14A</text>
+                    <line class="viz-connector" x1="586.7" y1="544.8" x2="714.0" y2="544.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="586.7" cy="544.8" r="5.5" tabindex="0" role="img" aria-label="EXP-14A test F1 0.6475" data-run="EXP-14A" data-series="Test F1" data-value="0.6475" data-acc="0.8182"/>
+                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="544.8" r="5.5" tabindex="0" role="img" aria-label="EXP-14A validation weighted F1 0.8141" data-run="EXP-14A" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
+                    <text class="viz-rowlabel" x="78" y="578.2" text-anchor="end">EXP-14B</text>
+                    <line class="viz-connector" x1="504.8" y1="574.2" x2="639.7" y2="574.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="504.8" cy="574.2" r="5.5" tabindex="0" role="img" aria-label="EXP-14B test F1 0.5403" data-run="EXP-14B" data-series="Test F1" data-value="0.5403" data-acc="0.7273"/>
+                    <circle class="viz-dot viz-dot--val" cx="639.7" cy="574.2" r="5.5" tabindex="0" role="img" aria-label="EXP-14B validation weighted F1 0.7169" data-run="EXP-14B" data-series="Validation weighted F1" data-value="0.7169" data-acc="0.7273"/>
+                    <rect class="viz-band" x="92" y="589.0" width="764" height="29.5"/>
+                    <text class="viz-rowlabel" x="78" y="607.8" text-anchor="end">EXP-15A</text>
+                    <line class="viz-connector" x1="452.5" y1="603.8" x2="639.7" y2="603.8"/>
+                    <circle class="viz-dot viz-dot--test" cx="452.5" cy="603.8" r="5.5" tabindex="0" role="img" aria-label="EXP-15A test F1 0.4719" data-run="EXP-15A" data-series="Test F1" data-value="0.4719" data-acc="0.7273"/>
+                    <circle class="viz-dot viz-dot--val" cx="639.7" cy="603.8" r="5.5" tabindex="0" role="img" aria-label="EXP-15A validation weighted F1 0.7169" data-run="EXP-15A" data-series="Validation weighted F1" data-value="0.7169" data-acc="0.7273"/>
+                    <text class="viz-rowlabel" x="78" y="637.2" text-anchor="end">EXP-15B</text>
+                    <line class="viz-connector" x1="542.7" y1="633.2" x2="785.4" y2="633.2"/>
+                    <circle class="viz-dot viz-dot--test" cx="542.7" cy="633.2" r="5.5" tabindex="0" role="img" aria-label="EXP-15B test F1 0.5899" data-run="EXP-15B" data-series="Test F1" data-value="0.5899" data-acc="0.9091"/>
+                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="633.2" r="5.5" tabindex="0" role="img" aria-label="EXP-15B validation weighted F1 0.9076" data-run="EXP-15B" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
+                    </svg>
+
+                    <div class="viz-tooltip" id="vizTooltip" role="status" aria-live="polite"></div>
+
+                </div>
+
+                <p class="mt-5">
+
+                    EXP-11 is labelled because it is the only configuration whose
+                    test F1-score (0.8296) clearly exceeded the PT-P1 no-code
+                    benchmark. EXP-9, EXP-11, EXP-12, EXP-13, and EXP-15B all
+                    reached an identical validation weighted F1-score of 0.9076,
+                    but their test F1-scores differ by as much as 0.28.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Complete Training Log
+
+                </h3>
+
+                <p>
+
+                    The full log is reproduced below so it can be read without
+                    downloading a spreadsheet. Scroll the table horizontally to
+                    see every column.
+
+                </p>
+
+                <div class="table-scroll fade-up">
+
+                    <table class="data-table">
+                    <caption class="visually-hidden">Feedforward backpropagation training log: twenty experiments with hyperparameters and resulting scores.</caption>
+                    <thead><tr>
+                    <th scope="col">Run ID</th>
+                    <th scope="col">Neurons</th>
+                    <th scope="col">Learning rate</th>
+                    <th scope="col">Optimizer</th>
+                    <th scope="col">Epochs</th>
+                    <th scope="col">Batch</th>
+                    <th scope="col">Train loss</th>
+                    <th scope="col">Val loss</th>
+                    <th scope="col">Val accuracy</th>
+                    <th scope="col">Val weighted F1</th>
+                    <th scope="col">Test F1</th>
+                    </tr></thead>
+                    <tbody>
+                    <tr>
+                    <th scope="row">EXP-001</th>
+                    <td>64</td>
+                    <td>0.005</td>
+                    <td>Adam</td>
+                    <td>15</td>
+                    <td>32</td>
+                    <td>0.5878</td>
+                    <td>0.9227</td>
+                    <td>57.14%</td>
+                    <td>0.7007</td>
+                    <td>0.7007</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-002</th>
+                    <td>16</td>
+                    <td>0.0001</td>
+                    <td>Adam</td>
+                    <td>15</td>
+                    <td>32</td>
+                    <td>1.0949</td>
+                    <td>1.0998</td>
+                    <td>14.29%</td>
+                    <td>0.0714</td>
+                    <td>0.3571</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-003</th>
+                    <td>256</td>
+                    <td>0.05</td>
+                    <td>Adam</td>
+                    <td>15</td>
+                    <td>32</td>
+                    <td>0.0000</td>
+                    <td>3.5379</td>
+                    <td>57.14%</td>
+                    <td>0.5143</td>
+                    <td>0.6000</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-004</th>
+                    <td>256</td>
+                    <td>0.005</td>
+                    <td>Adam</td>
+                    <td>15</td>
+                    <td>32</td>
+                    <td>0.4497</td>
+                    <td>0.8671</td>
+                    <td>57.14%</td>
+                    <td>0.5476</td>
+                    <td>0.7007</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-05A</th>
+                    <td>128</td>
+                    <td>0.001</td>
+                    <td>Adam</td>
+                    <td>25</td>
+                    <td>16</td>
+                    <td>0.6276</td>
+                    <td>0.9486</td>
+                    <td>57.14%</td>
+                    <td>0.5476</td>
+                    <td>0.7007</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-05B</th>
+                    <td>256</td>
+                    <td>0.001</td>
+                    <td>Adam</td>
+                    <td>30</td>
+                    <td>8</td>
+                    <td>0.0436</td>
+                    <td>0.7505</td>
+                    <td>42.86%</td>
+                    <td>0.4000</td>
+                    <td>0.7007</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-006A</th>
+                    <td>128</td>
+                    <td>0.001</td>
+                    <td>Adam</td>
+                    <td>25</td>
+                    <td>16</td>
+                    <td>0.2375</td>
+                    <td>0.5282</td>
+                    <td>81.82%</td>
+                    <td>0.8141</td>
+                    <td>0.4719</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-006B</th>
+                    <td>256</td>
+                    <td>0.001</td>
+                    <td>Adam</td>
+                    <td>30</td>
+                    <td>16</td>
+                    <td>0.0637</td>
+                    <td>0.3438</td>
+                    <td>81.82%</td>
+                    <td>0.8141</td>
+                    <td>0.4719</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-007</th>
+                    <td>256</td>
+                    <td>0.001</td>
+                    <td>Adam</td>
+                    <td>35</td>
+                    <td>16</td>
+                    <td>0.0238</td>
+                    <td>0.3199</td>
+                    <td>81.82%</td>
+                    <td>0.8141</td>
+                    <td>0.5635</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-08A</th>
+                    <td>256</td>
+                    <td>0.01</td>
+                    <td>SGD</td>
+                    <td>35</td>
+                    <td>16</td>
+                    <td>1.0926</td>
+                    <td>1.0918</td>
+                    <td>36.36%</td>
+                    <td>0.1939</td>
+                    <td>0.1667</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-08B</th>
+                    <td>256</td>
+                    <td>0.001</td>
+                    <td>SGD</td>
+                    <td>60</td>
+                    <td>8</td>
+                    <td>1.0945</td>
+                    <td>1.0956</td>
+                    <td>63.64%</td>
+                    <td>0.5372</td>
+                    <td>0.3718</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-9</th>
+                    <td>256</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0250</td>
+                    <td>0.2905</td>
+                    <td>90.91%</td>
+                    <td>0.9076</td>
+                    <td>0.6475</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-10</th>
+                    <td>256 → 128</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0055</td>
+                    <td>0.2064</td>
+                    <td>90.91%</td>
+                    <td>0.9051</td>
+                    <td>0.5635</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-11</th>
+                    <td>512 → 128</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0026</td>
+                    <td>0.3185</td>
+                    <td>90.91%</td>
+                    <td>0.9076</td>
+                    <td>0.8296</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-12</th>
+                    <td>256 → 128</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0022</td>
+                    <td>0.2737</td>
+                    <td>90.91%</td>
+                    <td>0.9076</td>
+                    <td>0.6417</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-13</th>
+                    <td>256 → 128</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0026</td>
+                    <td>0.2642</td>
+                    <td>90.91%</td>
+                    <td>0.9076</td>
+                    <td>0.5281</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-14A</th>
+                    <td>256 → 128</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0040</td>
+                    <td>0.2668</td>
+                    <td>81.82%</td>
+                    <td>0.8141</td>
+                    <td>0.6475</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-14B</th>
+                    <td>256 → 128</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0038</td>
+                    <td>0.3020</td>
+                    <td>72.73%</td>
+                    <td>0.7169</td>
+                    <td>0.5403</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-15A</th>
+                    <td>256</td>
+                    <td>0.0003</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0038</td>
+                    <td>0.3020</td>
+                    <td>72.73%</td>
+                    <td>0.7169</td>
+                    <td>0.4719</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">EXP-15B</th>
+                    <td>256</td>
+                    <td>0.0005</td>
+                    <td>Adam</td>
+                    <td>40</td>
+                    <td>8</td>
+                    <td>0.0924</td>
+                    <td>0.3853</td>
+                    <td>90.91%</td>
+                    <td>0.9076</td>
+                    <td>0.5899</td>
+                    </tr>
+                    </tbody></table>
+
+                </div>
+
+                <div class="artifact-actions mt-4">
+
+                    <a href="files/prelim/ptp2-ffbp-training-log.xlsx" class="btn-primary-custom" download>
+
+                        Download Training Log
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-spreadsheet"></i>
+
+                        Excel Workbook &middot; 20 experiments &middot; 21 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         EXERCISE PT-P1
+    =========================================== -->
+
+    <section class="bg-white">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Exercise PT-P1</span>
+
+                <h2>No-Code Deep Learning Classification</h2>
+
+                <p>
+
+                    The baseline study. A three-class airline sentiment
+                    classifier trained through a no-code interface and tested
+                    against clear, ambiguous, and out-of-vocabulary language.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 4 -->
+
+    <section id="artifact-4">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 4
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    No-Code Deep Learning Text Classification for Airline
+                    Customer Feedback
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        No-Code Deep Learning Text Classification for Airline
+                        Customer Feedback Using Machine Learning
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>1 August 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>IEEE-format technical report, PDF, 4 pages</dd>
+
+                </dl>
+
+                <p>
+
+                    This report establishes the benchmark that PT-P2 was written
+                    to beat. It classifies airline passenger comments into
+                    Positive_Praise, Negative_Complaint, and Urgent_Support, and
+                    runs three sets of experiments: one with a balanced
+                    45-example dataset, and two that add further examples to
+                    measure how dataset size and class balance affect accuracy.
+
+                </p>
+
+                <p>
+
+                    It matters because its conclusion &mdash; that dataset
+                    quality and quantity dominate this task &mdash; was
+                    independently confirmed in PT-P2, where expanding the
+                    dataset produced a larger single gain than any architectural
+                    or optimisation change I made.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/prelim/ptp1-ieee-report.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-file-earmark-pdf"></i>
+
+                            <p>
+
+                                Your browser cannot display this document inline.
+                                Please use the buttons below to open or download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/prelim/ptp1-ieee-report.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Report
+
+                    </a>
+
+                    <a href="files/prelim/ptp1-ieee-report.pdf" class="btn-outline-custom" download>
+
+                        Download Report
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+
+                        PDF &middot; 4 pages &middot; 292 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 5 -->
+
+    <section class="bg-white" id="artifact-5">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 5
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    PT-P1 Model Training and Test Results Log
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        Lab Exercise PT-P1 &mdash; Test Case Results and Training
+                        Data Log
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>31 July &ndash; 1 August 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>
+
+                        Excel workbook &mdash; 15 test cases run across three
+                        model iterations, and a screenshot of the trained model
+
+                    </dd>
+
+                </dl>
+
+                <p>
+
+                    The workbook records every test sentence I submitted to the
+                    trained model alongside its expected label, predicted label,
+                    confidence score, and whether the prediction was correct.
+                    The same fifteen sentences were re-run after each refinement,
+                    giving forty-five logged results in total.
+
+                </p>
+
+                <p>
+
+                    The test cases are deliberately grouped into three kinds.
+                    Cases 1 to 9 use clear, unambiguous phrasing; cases 10 to 12
+                    are sarcastic, where the literal wording contradicts the
+                    intended sentiment; and cases 13 to 15 are out-of-vocabulary
+                    general inquiries that belong to no trained class at all.
+                    That grouping is what made the model's weaknesses visible.
+                    On the twelve in-vocabulary cases the baseline model scored
+                    eleven correct &mdash; the 91.67% benchmark carried into
+                    PT-P2 &mdash; but it misread the sarcastic case 10 as
+                    Positive_Praise, and it forced all three general inquiries
+                    into Urgent_Support with confidence as low as 0.11, because
+                    it had no option to answer that none of its classes applied.
+
+                </p>
+
+                <p>
+
+                    The screenshot below captures the trained model in the
+                    Machine Learning for Kids interface, confirming the balanced
+                    45-example configuration &mdash; 15 examples for each of the
+                    three classes &mdash; that produced that benchmark.
+
+                </p>
+
+                <div class="gallery-grid gallery-grid--single">
+
+                    <div class="gallery-item fade-up">
+
+                        <img src="images/prelim/ptp1-model-training.png"
+                            alt="Machine Learning for Kids training screen showing a model trained on 15 examples each of Positive_Praise, Negative_Complaint, and Urgent_Support, created on 31 July 2026 and listed as available for testing."
+                            data-lightbox loading="lazy">
+
+                        <div class="gallery-caption">
+
+                            <h3>
+
+                                Trained No-Code Model
+
+                            </h3>
+
+                            <p>
+
+                                Machine Learning for Kids training summary,
+                                31 July 2026. Select the image to enlarge it.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="artifact-actions mt-5">
+
+                    <a href="files/prelim/ptp1-test-results-log.xlsx" class="btn-primary-custom" download>
+
+                        Download Test Results Log
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-spreadsheet"></i>
+
+                        Excel Workbook &middot; 45 logged results &middot; 27 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         EXERCISE WW-P2
+    =========================================== -->
+
+    <section>
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Exercise WW-P2</span>
+
+                <h2>Natural Language Processing Foundations</h2>
+
+                <p>
+
+                    The theory underneath both classifiers, completed through a
+                    Microsoft Learn module and its hands-on text analytics
+                    activities.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 6 -->
+
+    <section class="bg-white" id="artifact-6">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 6
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Reflection on Introduction to Natural Language Processing
+                    Concepts and Text Analytics
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        Reflection on Introduction to Natural Language Processing
+                        Concepts and Text Analytics
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>24 July 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Written reflection, PDF, 2 pages</dd>
+
+                </dl>
+
+                <p>
+
+                    This reflection covers tokenisation, text preprocessing,
+                    TF-IDF, semantic embeddings, and contextual language models,
+                    together with the practical activities on text
+                    summarisation, language detection, and detecting personally
+                    identifiable information.
+
+                </p>
+
+                <p>
+
+                    It belongs in this collection because the concepts in it are
+                    the ones I later implemented by hand. The vocabulary
+                    building, padding, and embedding steps in the PT-P2 notebook
+                    are direct applications of the preprocessing and embedding
+                    theory summarised here.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/prelim/wwp2-nlp-reflection.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-file-earmark-pdf"></i>
+
+                            <p>
+
+                                Your browser cannot display this document inline.
+                                Please use the buttons below to open or download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/prelim/wwp2-nlp-reflection.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Reflection
+
+                    </a>
+
+                    <a href="files/prelim/wwp2-nlp-reflection.pdf" class="btn-outline-custom" download>
+
+                        Download Reflection
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-pdf"></i>
+
+                        PDF &middot; 2 pages &middot; 147 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 7 -->
+
+    <section id="artifact-7">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 7
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Microsoft Learn Certificate of Completion
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>
+
+                        Introduction to Natural Language Processing Concepts
+                        &mdash; Microsoft Learn
+
+                    </dd>
+
+                    <dt>Author</dt>
+
+                    <dd>
+
+                        Issued to Audrey Benjamin Gutierrez by Microsoft Learn
+
+                    </dd>
+
+                    <dt>Date</dt>
+
+                    <dd>24 July 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Certificate of completion, PDF, 1 page</dd>
+
+                </dl>
+
+                <p>
+
+                    Verified evidence that I completed the Microsoft Learn module
+                    that Artifact 6 reflects on. It is included because the
+                    reflection describes the learning, while this document
+                    confirms it.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/prelim/ms-learn-nlp-certificate.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-award"></i>
+
+                            <p>
+
+                                Your browser cannot display this certificate
+                                inline. Please use the buttons below to open or
+                                download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/prelim/ms-learn-nlp-certificate.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Certificate
+
+                    </a>
+
+                    <a href="files/prelim/ms-learn-nlp-certificate.pdf" class="btn-outline-custom" download>
+
+                        Download Certificate
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-award"></i>
+
+                        PDF &middot; 1 page &middot; 248 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         LEARNING REFLECTION
+    =========================================== -->
+
+    <section class="bg-white" id="reflection">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Reflection</span>
+
+                <h2>Learning Reflection</h2>
+
+                <p>
+
+                    What these artifacts show about my growth, what I would do
+                    differently, and where I am taking this next.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-5 fade-up">
+
+                <h3>
+
+                    How These Artifacts Demonstrate My Growth
+
+                </h3>
+
+                <p>
+
+                    The clearest evidence of growth in this collection is the
+                    distance between Artifact 4 and Artifact 1. In PT-P1 I
+                    trained a classifier by supplying examples to an interface
+                    and reading back an accuracy figure. I could describe what
+                    the model did, but not why it did it. In PT-P2 I built the
+                    same classifier layer by layer and had to decide the
+                    embedding dimension, the pooling strategy, the dropout rate,
+                    the optimiser, the learning rate, and the batch size myself
+                    &mdash; and then defend each decision with a logged result.
+
+                </p>
+
+                <p>
+
+                    A more specific marker of growth is what happened at EXP-001.
+                    My first Keras run, using default hyperparameters, reached
+                    only 57.1% validation accuracy, well below the 91.67% the
+                    no-code platform had achieved with far less effort. Early in
+                    the semester I would have read that as a failure of the code.
+                    Instead I treated it as a starting point and ran nineteen
+                    more controlled experiments to find out which factor actually
+                    mattered. That shift &mdash; from expecting a tool to work to
+                    systematically investigating why it does not &mdash; is the
+                    real learning in this Prelim.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Competencies I Developed
+
+                </h3>
+
+                <p>
+
+                    I can now implement a feedforward neural network for text
+                    classification in Keras end to end: building a vocabulary
+                    from raw text, converting tokens to padded integer
+                    sequences, defining an
+                    Embedding&ndash;GlobalAveragePooling1D&ndash;Dense&ndash;Dropout&ndash;Dense
+                    architecture, compiling it with an appropriate loss function
+                    and optimiser, and evaluating it with weighted precision,
+                    recall, and F1 rather than accuracy alone.
+
+                </p>
+
+                <p>
+
+                    I also learned to read a loss curve diagnostically. Comparing
+                    the curves across experiments taught me to recognise
+                    underfitting, where both curves stay high and flat as in
+                    EXP-002 and EXP-08A, and overfitting, where the curves
+                    diverge sharply as in EXP-003. Alongside this, keeping a
+                    disciplined experiment log became a competency in its own
+                    right: changing one variable at a time and recording the
+                    result is what made the twenty runs comparable.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Accomplishments
+
+                </h3>
+
+                <p>
+
+                    I met the goal of the exercise, though only partially and
+                    only after considerable effort. EXP-11 reached a test
+                    F1-score of 0.8296, the one configuration whose
+                    generalisation credibly exceeded the no-code benchmark.
+                    Along the way I identified that expanding the dataset lifted
+                    the validation weighted F1-score from 0.40 to 0.81, a larger
+                    single gain than any architectural or optimisation change
+                    produced, and I confirmed that Adam substantially
+                    outperformed SGD on this task.
+
+                </p>
+
+                <p>
+
+                    The accomplishment I value most, however, is the finding I
+                    did not set out to make: that five configurations tied on
+                    validation weighted F1 between 0.9051 and 0.9076 while their
+                    test F1-scores spread from 0.5281 to 0.8296. Documenting that
+                    honestly, rather than presenting EXP-11 as a clean success,
+                    is the part of this work I would defend most readily.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Critique of My Own Work and What I Would Do Differently
+
+                </h3>
+
+                <p>
+
+                    <strong>The dataset was too small to support my
+                    conclusions.</strong> With only twelve examples in the test
+                    set, two or three individual predictions move the test
+                    F1-score by 0.15 to 0.20. This means I cannot confidently
+                    attribute the spread across EXP-9 through EXP-13 to any
+                    hyperparameter at all; it may simply be sampling noise. A
+                    practical alternative would have been to use k-fold
+                    cross-validation instead of a single fixed split, which would
+                    have given every example a turn in the held-out set and
+                    produced a mean and variance per configuration rather than
+                    one fragile number. Failing that, I should have prioritised
+                    collecting several hundred labelled examples before tuning
+                    anything, since my own results show data volume mattered more
+                    than architecture.
+
+                </p>
+
+                <p>
+
+                    <strong>I selected my champion model on the wrong
+                    signal.</strong> I tuned against validation performance and
+                    then reported the test score, which risks over-optimising to
+                    the validation set. A cleaner design would have been to fix
+                    the selection rule in advance &mdash; choose on validation,
+                    touch the test set exactly once &mdash; and to state that
+                    rule in the report before running the experiments rather than
+                    discovering the problem afterwards.
+
+                </p>
+
+                <p>
+
+                    <strong>My experiments changed more than one variable at a
+                    time.</strong> EXP-9, for example, altered sequence length,
+                    vocabulary size, embedding dimension, dropout, and learning
+                    rate together. It produced my best validation score, but I
+                    cannot say which change was responsible. Running these as
+                    five separate single-variable experiments would have taken
+                    longer but would have yielded an actual explanation instead
+                    of a good result I cannot account for.
+
+                </p>
+
+                <p>
+
+                    <strong>I did not save the notebook's outputs.</strong> The
+                    committed notebook contains the code and my explanations but
+                    no executed cells, so a reader has to take the logged numbers
+                    on trust rather than seeing them produced. Re-running the
+                    champion configuration and committing the notebook with its
+                    outputs and loss plots intact would make the work genuinely
+                    reproducible, and it is the first correction I intend to
+                    make.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Short-Term Goals
+
+                </h3>
+
+                <p>
+
+                    Before the Midterm period, I intend to re-run EXP-11 and
+                    commit the notebook with its outputs and loss curves saved,
+                    so the evidence is visible rather than merely reported. I
+                    also plan to implement k-fold cross-validation on the same
+                    dataset and compare the resulting mean F1-scores against my
+                    single-split results, which should tell me directly how much
+                    of the spread in Table III was noise. Finally, I want to
+                    expand the airline sentiment dataset well beyond 75 examples,
+                    since every result I produced points to data volume as the
+                    binding constraint.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Long-Term Goals
+
+                </h3>
+
+                <p>
+
+                    Over the remainder of this course and my degree, I want to
+                    move from the averaged bag-of-embeddings model used here to
+                    architectures that respect word order, and then to
+                    transformer-based contextual models of the kind introduced in
+                    the Microsoft Learn module. The limitation is already visible
+                    in my own PT-P1 results, where the model misread sarcastic
+                    and ambiguous phrasing precisely because averaging discards
+                    the ordering that carries the sarcasm.
+
+                </p>
+
+                <p>
+
+                    More broadly, I want to be able to build models whose
+                    behaviour I can explain to someone who will act on the
+                    output. My Course Expectations page raised explainability and
+                    ethics as things I hoped to learn; this Prelim turned that
+                    from an abstract interest into a concrete one, because I now
+                    know from experience how convincing a model with a 0.9076
+                    validation score can look while generalising poorly. Carrying
+                    that scepticism into larger projects is the professional
+                    habit I most want to keep.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         CLOSING
+    =========================================== -->
+
+    <section>
+
+        <div class="container-custom">
+
+            <div class="glass text-center p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Thank You
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Continue Exploring My Portfolio
+
+                </h2>
+
+                <p class="mt-3">
+
+                    Thank you for reviewing my Prelim output. You may continue
+                    exploring this ePortfolio to read about my educational
+                    background, technical skills, and expectations for ITC-C508.
+
+                </p>
+
+                <div class="hero-buttons justify-content-center mt-4">
+
+                    <a href="about.html" class="btn-primary-custom">
+
+                        About Me
+
+                    </a>
+
+                    <a href="expectations.html" class="btn-outline-custom">
+
+                        Course Expectations
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="container-custom">
+
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+
+                    <h5>
+
+                        Audrey Portfolio
+
+                    </h5>
+
+                    <p>
+
+                        An academic ePortfolio showcasing my educational
+                        journey, technical skills, and course expectations as
+                        a Bachelor of Science in Information Technology student.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+
+                            Home
+
+                        </a>
+
+                        <a href="about.html">
+
+                            About
+
+                        </a>
+
+                        <a href="expectations.html">
+
+                            Course Expectations
+
+                        </a>
+
+                        <a href="prelim.html">
+
+                            Prelim Output
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Student Information
+
+                    </h5>
+
+                    <p>
+
+                        Audrey Benjamin Gutierrez<br>
+
+                        Bachelor of Science in Information Technology
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="footer-bottom text-center">
+
+                <p class="mb-0">
+
+                    &copy;
+                    <span id="year"></span>
+
+                    Audrey Benjamin Gutierrez.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+         BACK TO TOP
+    =========================================== -->
+
+    <button id="backToTop" aria-label="Back To Top">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </button>
+
+    <!-- ==========================================
+         LIGHTBOX
+    =========================================== -->
+
+    <div class="lightbox" role="dialog" aria-label="Image Preview">
+
+        <img src="" alt="Enlarged preview of the selected screenshot">
+
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <script>
+
+        /* Chart hover and keyboard tooltip */
+
+        (function () {
+
+            const root = document.querySelector(".viz-root");
+
+            if (!root) return;
+
+            const tooltip = document.getElementById("vizTooltip");
+
+            const dots = root.querySelectorAll(".viz-dot");
+
+            function show(dot) {
+
+                const box = root.getBoundingClientRect();
+
+                const point = dot.getBoundingClientRect();
+
+                tooltip.innerHTML =
+                    "<strong>" + dot.dataset.run + "</strong><br>" +
+                    dot.dataset.series + ": " + dot.dataset.value;
+
+                tooltip.style.left = (point.left - box.left + point.width / 2) + "px";
+
+                tooltip.style.top = (point.top - box.top) + "px";
+
+                tooltip.classList.add("active");
+
+            }
+
+            function hide() {
+
+                tooltip.classList.remove("active");
+
+            }
+
+            dots.forEach(dot => {
+
+                dot.addEventListener("mouseenter", () => show(dot));
+
+                dot.addEventListener("focus", () => show(dot));
+
+                dot.addEventListener("mouseleave", hide);
+
+                dot.addEventListener("blur", hide);
+
+            });
+
+        })();
+
+    </script>
+
+</body>
+
+</html>
