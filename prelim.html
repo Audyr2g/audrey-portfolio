@@ -319,7 +319,7 @@
 
                 <p>
 
-                    The four figures that summarise the Prelim investigation.
+                    The four figures that summarize the Prelim investigation.
 
                 </p>
 
@@ -400,7 +400,7 @@
 
                     Rebuilding the PT-P1 classifier as an explicit Keras
                     feedforward network, then tuning it across twenty
-                    experiments covering architecture, optimisation,
+                    experiments covering architecture, optimization,
                     regularisation, and dataset size.
 
                 </p>
@@ -705,7 +705,7 @@
                     The chart below plots each experiment twice: its validation
                     weighted F1-score and its test F1-score. The distance between
                     the two dots on a row is the size of that experiment's
-                    generalisation gap. From EXP-9 onward the validation scores
+                    generalization gap. From EXP-9 onward the validation scores
                     cluster tightly at the top while the test scores stay
                     scattered, which is the central finding of the report.
 
@@ -847,7 +847,7 @@
 
                 <p class="mt-5">
 
-                    EXP-11 is labelled because it is the only configuration whose
+                    EXP-11 is labeled because it is the only configuration whose
                     test F1-score (0.8296) clearly exceeded the PT-P1 no-code
                     benchmark. EXP-9, EXP-11, EXP-12, EXP-13, and EXP-15B all
                     reached an identical validation weighted F1-score of 0.9076,
@@ -1266,7 +1266,7 @@
                     quality and quantity dominate this task &mdash; was
                     independently confirmed in PT-P2, where expanding the
                     dataset produced a larger single gain than any architectural
-                    or optimisation change I made.
+                    or optimization change I made.
 
                 </p>
 
@@ -1537,10 +1537,10 @@
 
                 <p>
 
-                    This reflection covers tokenisation, text preprocessing,
+                    This reflection covers tokenization, text preprocessing,
                     TF-IDF, semantic embeddings, and contextual language models,
                     together with the practical activities on text
-                    summarisation, language detection, and detecting personally
+                    summarization, language detection, and detecting personally
                     identifiable information.
 
                 </p>
@@ -1551,7 +1551,7 @@
                     the ones I later implemented by hand. The vocabulary
                     building, padding, and embedding steps in the PT-P2 notebook
                     are direct applications of the preprocessing and embedding
-                    theory summarised here.
+                    theory summarized here.
 
                 </p>
 
@@ -1758,7 +1758,7 @@
                     the model did, but not why it did it. In PT-P2 I built the
                     same classifier layer by layer and had to decide the
                     embedding dimension, the pooling strategy, the dropout rate,
-                    the optimiser, the learning rate, and the batch size myself
+                    the optimizer, the learning rate, and the batch size myself
                     &mdash; and then defend each decision with a logged result.
 
                 </p>
@@ -1792,7 +1792,7 @@
                     sequences, defining an
                     Embedding&ndash;GlobalAveragePooling1D&ndash;Dense&ndash;Dropout&ndash;Dense
                     architecture, compiling it with an appropriate loss function
-                    and optimiser, and evaluating it with weighted precision,
+                    and optimizer, and evaluating it with weighted precision,
                     recall, and F1 rather than accuracy alone.
 
                 </p>
@@ -1800,7 +1800,7 @@
                 <p>
 
                     I also learned to read a loss curve diagnostically. Comparing
-                    the curves across experiments taught me to recognise
+                    the curves across experiments taught me to recognize
                     underfitting, where both curves stay high and flat as in
                     EXP-002 and EXP-08A, and overfitting, where the curves
                     diverge sharply as in EXP-003. Alongside this, keeping a
@@ -1821,10 +1821,10 @@
                     I met the goal of the exercise, though only partially and
                     only after considerable effort. EXP-11 reached a test
                     F1-score of 0.8296, the one configuration whose
-                    generalisation credibly exceeded the no-code benchmark.
+                    generalization credibly exceeded the no-code benchmark.
                     Along the way I identified that expanding the dataset lifted
                     the validation weighted F1-score from 0.40 to 0.81, a larger
-                    single gain than any architectural or optimisation change
+                    single gain than any architectural or optimization change
                     produced, and I confirmed that Adam substantially
                     outperformed SGD on this task.
 
@@ -1859,8 +1859,8 @@
                     cross-validation instead of a single fixed split, which would
                     have given every example a turn in the held-out set and
                     produced a mean and variance per configuration rather than
-                    one fragile number. Failing that, I should have prioritised
-                    collecting several hundred labelled examples before tuning
+                    one fragile number. Failing that, I should have prioritized
+                    collecting several hundred labeled examples before tuning
                     anything, since my own results show data volume mattered more
                     than architecture.
 
@@ -1870,7 +1870,7 @@
 
                     <strong>I selected my champion model on the wrong
                     signal.</strong> I tuned against validation performance and
-                    then reported the test score, which risks over-optimising to
+                    then reported the test score, which risks over-optimizing to
                     the validation set. A cleaner design would have been to fix
                     the selection rule in advance &mdash; choose on validation,
                     touch the test set exactly once &mdash; and to state that
@@ -1948,13 +1948,13 @@
                 <p>
 
                     More broadly, I want to be able to build models whose
-                    behaviour I can explain to someone who will act on the
+                    behavior I can explain to someone who will act on the
                     output. My Course Expectations page raised explainability and
                     ethics as things I hoped to learn; this Prelim turned that
                     from an abstract interest into a concrete one, because I now
                     know from experience how convincing a model with a 0.9076
-                    validation score can look while generalising poorly. Carrying
-                    that scepticism into larger projects is the professional
+                    validation score can look while generalizing poorly. Carrying
+                    that skepticism into larger projects is the professional
                     habit I most want to keep.
 
                 </p>
