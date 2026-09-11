@@ -251,7 +251,7 @@
 
                 <a href="#artifact-3">
 
-                    <i class="bi bi-table"></i>
+                    <i class="bi bi-file-earmark-spreadsheet"></i>
 
                     <span>3. PT-P2 Training Log</span>
 
@@ -694,181 +694,19 @@
 
                 </p>
 
-                <h3 class="mt-5">
-
-                    Validation Scores Did Not Predict Test Scores
-
-                </h3>
-
                 <p>
 
-                    The chart below plots each experiment twice: its validation
-                    weighted F1-score and its test F1-score. The distance between
-                    the two dots on a row is the size of that experiment's
-                    generalization gap. From EXP-9 onward the validation scores
-                    cluster tightly at the top while the test scores stay
-                    scattered, which is the central finding of the report.
-
-                </p>
-
-                <div class="viz-root fade-up">
-
-                    <div class="viz-legend">
-
-                        <span>
-
-                            <span class="viz-swatch viz-swatch--val" aria-hidden="true"></span>
-
-                            Validation weighted F1
-
-                        </span>
-
-                        <span>
-
-                            <span class="viz-swatch viz-swatch--test" aria-hidden="true"></span>
-
-                            Test F1
-
-                        </span>
-
-                    </div>
-
-                    <svg class="viz-svg" viewBox="0 0 900 700" role="img" aria-labelledby="chartTitle chartDesc" preserveAspectRatio="xMidYMid meet">
-                    <title id="chartTitle">Validation weighted F1 versus test F1 for twenty experiments</title>
-                    <desc id="chartDesc">Each row is one experiment. The blue dot is the validation weighted F1-score and the orange dot is the test F1-score. Validation scores rise to 0.9076 across later experiments while test scores stay between 0.53 and 0.83, showing that validation performance overstated true generalization.</desc>
-                    <line class="viz-grid" x1="92.0" y1="48" x2="92.0" y2="654"/>
-                    <text class="viz-tick" x="92.0" y="676" text-anchor="middle">0.0</text>
-                    <line class="viz-grid" x1="244.8" y1="48" x2="244.8" y2="654"/>
-                    <text class="viz-tick" x="244.8" y="676" text-anchor="middle">0.2</text>
-                    <line class="viz-grid" x1="397.6" y1="48" x2="397.6" y2="654"/>
-                    <text class="viz-tick" x="397.6" y="676" text-anchor="middle">0.4</text>
-                    <line class="viz-grid" x1="550.4" y1="48" x2="550.4" y2="654"/>
-                    <text class="viz-tick" x="550.4" y="676" text-anchor="middle">0.6</text>
-                    <line class="viz-grid" x1="703.2" y1="48" x2="703.2" y2="654"/>
-                    <text class="viz-tick" x="703.2" y="676" text-anchor="middle">0.8</text>
-                    <line class="viz-grid" x1="856.0" y1="48" x2="856.0" y2="654"/>
-                    <text class="viz-tick" x="856.0" y="676" text-anchor="middle">1.0</text>
-                    <text class="viz-axis-label" x="474.0" y="690" text-anchor="middle">F1-score</text>
-                    <rect class="viz-band" x="92" y="58.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="76.8" text-anchor="end">EXP-001</text>
-                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="79.8" r="5.5" tabindex="0" role="img" aria-label="EXP-001 test F1 0.7007" data-run="EXP-001" data-series="Test F1" data-value="0.7007" data-acc="0.5714"/>
-                    <circle class="viz-dot viz-dot--val" cx="627.3" cy="65.8" r="5.5" tabindex="0" role="img" aria-label="EXP-001 validation weighted F1 0.7007" data-run="EXP-001" data-series="Validation weighted F1" data-value="0.7007" data-acc="0.5714"/>
-                    <text class="viz-rowlabel" x="78" y="106.2" text-anchor="end">EXP-002</text>
-                    <line class="viz-connector" x1="146.5" y1="102.2" x2="364.8" y2="102.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="364.8" cy="102.2" r="5.5" tabindex="0" role="img" aria-label="EXP-002 test F1 0.3571" data-run="EXP-002" data-series="Test F1" data-value="0.3571" data-acc="0.1429"/>
-                    <circle class="viz-dot viz-dot--val" cx="146.5" cy="102.2" r="5.5" tabindex="0" role="img" aria-label="EXP-002 validation weighted F1 0.0714" data-run="EXP-002" data-series="Validation weighted F1" data-value="0.0714" data-acc="0.1429"/>
-                    <rect class="viz-band" x="92" y="117.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="135.8" text-anchor="end">EXP-003</text>
-                    <line class="viz-connector" x1="484.9" y1="131.8" x2="550.4" y2="131.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="550.4" cy="131.8" r="5.5" tabindex="0" role="img" aria-label="EXP-003 test F1 0.6000" data-run="EXP-003" data-series="Test F1" data-value="0.6000" data-acc="0.5714"/>
-                    <circle class="viz-dot viz-dot--val" cx="484.9" cy="131.8" r="5.5" tabindex="0" role="img" aria-label="EXP-003 validation weighted F1 0.5143" data-run="EXP-003" data-series="Validation weighted F1" data-value="0.5143" data-acc="0.5714"/>
-                    <text class="viz-rowlabel" x="78" y="165.2" text-anchor="end">EXP-004</text>
-                    <line class="viz-connector" x1="510.4" y1="161.2" x2="627.3" y2="161.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="161.2" r="5.5" tabindex="0" role="img" aria-label="EXP-004 test F1 0.7007" data-run="EXP-004" data-series="Test F1" data-value="0.7007" data-acc="0.5714"/>
-                    <circle class="viz-dot viz-dot--val" cx="510.4" cy="161.2" r="5.5" tabindex="0" role="img" aria-label="EXP-004 validation weighted F1 0.5476" data-run="EXP-004" data-series="Validation weighted F1" data-value="0.5476" data-acc="0.5714"/>
-                    <rect class="viz-band" x="92" y="176.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="194.8" text-anchor="end">EXP-05A</text>
-                    <line class="viz-connector" x1="510.4" y1="190.8" x2="627.3" y2="190.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="190.8" r="5.5" tabindex="0" role="img" aria-label="EXP-05A test F1 0.7007" data-run="EXP-05A" data-series="Test F1" data-value="0.7007" data-acc="0.5714"/>
-                    <circle class="viz-dot viz-dot--val" cx="510.4" cy="190.8" r="5.5" tabindex="0" role="img" aria-label="EXP-05A validation weighted F1 0.5476" data-run="EXP-05A" data-series="Validation weighted F1" data-value="0.5476" data-acc="0.5714"/>
-                    <text class="viz-rowlabel" x="78" y="224.2" text-anchor="end">EXP-05B</text>
-                    <line class="viz-connector" x1="397.6" y1="220.2" x2="627.3" y2="220.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="627.3" cy="220.2" r="5.5" tabindex="0" role="img" aria-label="EXP-05B test F1 0.7007" data-run="EXP-05B" data-series="Test F1" data-value="0.7007" data-acc="0.4286"/>
-                    <circle class="viz-dot viz-dot--val" cx="397.6" cy="220.2" r="5.5" tabindex="0" role="img" aria-label="EXP-05B validation weighted F1 0.4000" data-run="EXP-05B" data-series="Validation weighted F1" data-value="0.4000" data-acc="0.4286"/>
-                    <rect class="viz-band" x="92" y="235.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="253.8" text-anchor="end">EXP-006A</text>
-                    <line class="viz-connector" x1="452.5" y1="249.8" x2="714.0" y2="249.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="452.5" cy="249.8" r="5.5" tabindex="0" role="img" aria-label="EXP-006A test F1 0.4719" data-run="EXP-006A" data-series="Test F1" data-value="0.4719" data-acc="0.8182"/>
-                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="249.8" r="5.5" tabindex="0" role="img" aria-label="EXP-006A validation weighted F1 0.8141" data-run="EXP-006A" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
-                    <text class="viz-rowlabel" x="78" y="283.2" text-anchor="end">EXP-006B</text>
-                    <line class="viz-connector" x1="452.5" y1="279.2" x2="714.0" y2="279.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="452.5" cy="279.2" r="5.5" tabindex="0" role="img" aria-label="EXP-006B test F1 0.4719" data-run="EXP-006B" data-series="Test F1" data-value="0.4719" data-acc="0.8182"/>
-                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="279.2" r="5.5" tabindex="0" role="img" aria-label="EXP-006B validation weighted F1 0.8141" data-run="EXP-006B" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
-                    <rect class="viz-band" x="92" y="294.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="312.8" text-anchor="end">EXP-007</text>
-                    <line class="viz-connector" x1="522.5" y1="308.8" x2="714.0" y2="308.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="522.5" cy="308.8" r="5.5" tabindex="0" role="img" aria-label="EXP-007 test F1 0.5635" data-run="EXP-007" data-series="Test F1" data-value="0.5635" data-acc="0.8182"/>
-                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="308.8" r="5.5" tabindex="0" role="img" aria-label="EXP-007 validation weighted F1 0.8141" data-run="EXP-007" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
-                    <text class="viz-rowlabel" x="78" y="342.2" text-anchor="end">EXP-08A</text>
-                    <line class="viz-connector" x1="219.4" y1="338.2" x2="240.1" y2="338.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="219.4" cy="338.2" r="5.5" tabindex="0" role="img" aria-label="EXP-08A test F1 0.1667" data-run="EXP-08A" data-series="Test F1" data-value="0.1667" data-acc="0.3636"/>
-                    <circle class="viz-dot viz-dot--val" cx="240.1" cy="338.2" r="5.5" tabindex="0" role="img" aria-label="EXP-08A validation weighted F1 0.1939" data-run="EXP-08A" data-series="Validation weighted F1" data-value="0.1939" data-acc="0.3636"/>
-                    <rect class="viz-band" x="92" y="353.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="371.8" text-anchor="end">EXP-08B</text>
-                    <line class="viz-connector" x1="376.1" y1="367.8" x2="502.4" y2="367.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="376.1" cy="367.8" r="5.5" tabindex="0" role="img" aria-label="EXP-08B test F1 0.3718" data-run="EXP-08B" data-series="Test F1" data-value="0.3718" data-acc="0.6364"/>
-                    <circle class="viz-dot viz-dot--val" cx="502.4" cy="367.8" r="5.5" tabindex="0" role="img" aria-label="EXP-08B validation weighted F1 0.5372" data-run="EXP-08B" data-series="Validation weighted F1" data-value="0.5372" data-acc="0.6364"/>
-                    <text class="viz-rowlabel" x="78" y="401.2" text-anchor="end">EXP-9</text>
-                    <line class="viz-connector" x1="586.7" y1="397.2" x2="785.4" y2="397.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="586.7" cy="397.2" r="5.5" tabindex="0" role="img" aria-label="EXP-9 test F1 0.6475" data-run="EXP-9" data-series="Test F1" data-value="0.6475" data-acc="0.9091"/>
-                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="397.2" r="5.5" tabindex="0" role="img" aria-label="EXP-9 validation weighted F1 0.9076" data-run="EXP-9" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
-                    <rect class="viz-band" x="92" y="412.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="430.8" text-anchor="end">EXP-10</text>
-                    <line class="viz-connector" x1="522.5" y1="426.8" x2="783.5" y2="426.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="522.5" cy="426.8" r="5.5" tabindex="0" role="img" aria-label="EXP-10 test F1 0.5635" data-run="EXP-10" data-series="Test F1" data-value="0.5635" data-acc="0.9091"/>
-                    <circle class="viz-dot viz-dot--val" cx="783.5" cy="426.8" r="5.5" tabindex="0" role="img" aria-label="EXP-10 validation weighted F1 0.9051" data-run="EXP-10" data-series="Validation weighted F1" data-value="0.9051" data-acc="0.9091"/>
-                    <text class="viz-rowlabel" x="78" y="460.2" text-anchor="end">EXP-11</text>
-                    <line class="viz-connector" x1="725.8" y1="456.2" x2="785.4" y2="456.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="725.8" cy="456.2" r="5.5" tabindex="0" role="img" aria-label="EXP-11 test F1 0.8296" data-run="EXP-11" data-series="Test F1" data-value="0.8296" data-acc="0.9091"/>
-                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="456.2" r="5.5" tabindex="0" role="img" aria-label="EXP-11 validation weighted F1 0.9076" data-run="EXP-11" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
-                    <text class="viz-callout" x="711.8" y="460.2" text-anchor="end">champion &#183; 0.8296</text>
-                    <rect class="viz-band" x="92" y="471.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="489.8" text-anchor="end">EXP-12</text>
-                    <line class="viz-connector" x1="582.3" y1="485.8" x2="785.4" y2="485.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="582.3" cy="485.8" r="5.5" tabindex="0" role="img" aria-label="EXP-12 test F1 0.6417" data-run="EXP-12" data-series="Test F1" data-value="0.6417" data-acc="0.9091"/>
-                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="485.8" r="5.5" tabindex="0" role="img" aria-label="EXP-12 validation weighted F1 0.9076" data-run="EXP-12" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
-                    <text class="viz-rowlabel" x="78" y="519.2" text-anchor="end">EXP-13</text>
-                    <line class="viz-connector" x1="495.5" y1="515.2" x2="785.4" y2="515.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="495.5" cy="515.2" r="5.5" tabindex="0" role="img" aria-label="EXP-13 test F1 0.5281" data-run="EXP-13" data-series="Test F1" data-value="0.5281" data-acc="0.9091"/>
-                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="515.2" r="5.5" tabindex="0" role="img" aria-label="EXP-13 validation weighted F1 0.9076" data-run="EXP-13" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
-                    <rect class="viz-band" x="92" y="530.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="548.8" text-anchor="end">EXP-14A</text>
-                    <line class="viz-connector" x1="586.7" y1="544.8" x2="714.0" y2="544.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="586.7" cy="544.8" r="5.5" tabindex="0" role="img" aria-label="EXP-14A test F1 0.6475" data-run="EXP-14A" data-series="Test F1" data-value="0.6475" data-acc="0.8182"/>
-                    <circle class="viz-dot viz-dot--val" cx="714.0" cy="544.8" r="5.5" tabindex="0" role="img" aria-label="EXP-14A validation weighted F1 0.8141" data-run="EXP-14A" data-series="Validation weighted F1" data-value="0.8141" data-acc="0.8182"/>
-                    <text class="viz-rowlabel" x="78" y="578.2" text-anchor="end">EXP-14B</text>
-                    <line class="viz-connector" x1="504.8" y1="574.2" x2="639.7" y2="574.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="504.8" cy="574.2" r="5.5" tabindex="0" role="img" aria-label="EXP-14B test F1 0.5403" data-run="EXP-14B" data-series="Test F1" data-value="0.5403" data-acc="0.7273"/>
-                    <circle class="viz-dot viz-dot--val" cx="639.7" cy="574.2" r="5.5" tabindex="0" role="img" aria-label="EXP-14B validation weighted F1 0.7169" data-run="EXP-14B" data-series="Validation weighted F1" data-value="0.7169" data-acc="0.7273"/>
-                    <rect class="viz-band" x="92" y="589.0" width="764" height="29.5"/>
-                    <text class="viz-rowlabel" x="78" y="607.8" text-anchor="end">EXP-15A</text>
-                    <line class="viz-connector" x1="452.5" y1="603.8" x2="639.7" y2="603.8"/>
-                    <circle class="viz-dot viz-dot--test" cx="452.5" cy="603.8" r="5.5" tabindex="0" role="img" aria-label="EXP-15A test F1 0.4719" data-run="EXP-15A" data-series="Test F1" data-value="0.4719" data-acc="0.7273"/>
-                    <circle class="viz-dot viz-dot--val" cx="639.7" cy="603.8" r="5.5" tabindex="0" role="img" aria-label="EXP-15A validation weighted F1 0.7169" data-run="EXP-15A" data-series="Validation weighted F1" data-value="0.7169" data-acc="0.7273"/>
-                    <text class="viz-rowlabel" x="78" y="637.2" text-anchor="end">EXP-15B</text>
-                    <line class="viz-connector" x1="542.7" y1="633.2" x2="785.4" y2="633.2"/>
-                    <circle class="viz-dot viz-dot--test" cx="542.7" cy="633.2" r="5.5" tabindex="0" role="img" aria-label="EXP-15B test F1 0.5899" data-run="EXP-15B" data-series="Test F1" data-value="0.5899" data-acc="0.9091"/>
-                    <circle class="viz-dot viz-dot--val" cx="785.4" cy="633.2" r="5.5" tabindex="0" role="img" aria-label="EXP-15B validation weighted F1 0.9076" data-run="EXP-15B" data-series="Validation weighted F1" data-value="0.9076" data-acc="0.9091"/>
-                    </svg>
-
-                    <div class="viz-tooltip" id="vizTooltip" role="status" aria-live="polite"></div>
-
-                </div>
-
-                <p class="mt-5">
-
-                    EXP-11 is labeled because it is the only configuration whose
-                    test F1-score (0.8296) clearly exceeded the PT-P1 no-code
-                    benchmark. EXP-9, EXP-11, EXP-12, EXP-13, and EXP-15B all
+                    The log is also what exposed the central finding of the
+                    report. EXP-9, EXP-11, EXP-12, EXP-13, and EXP-15B all
                     reached an identical validation weighted F1-score of 0.9076,
-                    but their test F1-scores differ by as much as 0.28.
+                    yet their test F1-scores differ by as much as 0.28. Only
+                    EXP-11, at a test F1-score of 0.8296, clearly exceeded the
+                    PT-P1 no-code benchmark. Without the log side by side, those
+                    five runs would have looked interchangeable.
 
                 </p>
 
-                <h3 class="mt-5">
-
-                    Complete Training Log
-
-                </h3>
-
-                <p>
-
-                    The complete workbook, with all twenty experiments recorded
-                    across twenty-six fields, is available to download below.
-
-                </p>
-
-                <div class="artifact-actions mt-4">
+                <div class="artifact-actions mt-5">
 
                     <a href="files/prelim/ptp2-ffbp-training-log.xlsx" class="btn-primary-custom" download>
 
@@ -1868,59 +1706,6 @@
 
     <script src="js/script.js"></script>
 
-    <script>
-
-        /* Chart hover and keyboard tooltip */
-
-        (function () {
-
-            const root = document.querySelector(".viz-root");
-
-            if (!root) return;
-
-            const tooltip = document.getElementById("vizTooltip");
-
-            const dots = root.querySelectorAll(".viz-dot");
-
-            function show(dot) {
-
-                const box = root.getBoundingClientRect();
-
-                const point = dot.getBoundingClientRect();
-
-                tooltip.innerHTML =
-                    "<strong>" + dot.dataset.run + "</strong><br>" +
-                    dot.dataset.series + ": " + dot.dataset.value;
-
-                tooltip.style.left = (point.left - box.left + point.width / 2) + "px";
-
-                tooltip.style.top = (point.top - box.top) + "px";
-
-                tooltip.classList.add("active");
-
-            }
-
-            function hide() {
-
-                tooltip.classList.remove("active");
-
-            }
-
-            dots.forEach(dot => {
-
-                dot.addEventListener("mouseenter", () => show(dot));
-
-                dot.addEventListener("focus", () => show(dot));
-
-                dot.addEventListener("mouseleave", hide);
-
-                dot.addEventListener("blur", hide);
-
-            });
-
-        })();
-
-    </script>
 
 </body>
 
