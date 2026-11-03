@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeMobileMenu();
     initializeLightbox();
     initializeAccessibility();
+    initializeScrollProgress();
+    initializeIndexSpy();
+    initializeHaptics();
 
 });
 
@@ -322,5 +325,106 @@ const yearElement = document.getElementById("year");
 if (yearElement) {
 
     yearElement.textContent = new Date().getFullYear();
+
+}
+
+/* ==========================================================
+   READING PROGRESS BAR
+========================================================== */
+
+function initializeScrollProgress() {
+
+    const bar = document.createElement("div");
+
+    bar.className = "scroll-progress";
+    bar.setAttribute("aria-hidden", "true");
+    document.body.prepend(bar);
+
+    let ticking = false;
+
+    const update = () => {
+
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+
+        bar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+        ticking = false;
+
+    };
+
+    window.addEventListener("scroll", () => {
+
+        if (!ticking) {
+
+            requestAnimationFrame(update);
+            ticking = true;
+
+        }
+
+    }, { passive: true });
+
+    update();
+
+}
+
+/* ==========================================================
+   ARTIFACT INDEX: HIGHLIGHT THE SECTION IN VIEW
+========================================================== */
+
+function initializeIndexSpy() {
+
+    const links = [...document.querySelectorAll(".artifact-index a[href^='#']")];
+
+    if (!links.length) return;
+
+    const byId = new Map();
+
+    links.forEach(link => {
+
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if (target) byId.set(target.id, link);
+
+    });
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            links.forEach(link => link.classList.remove("is-current"));
+            byId.get(entry.target.id)?.classList.add("is-current");
+
+        });
+
+    }, { rootMargin: "-45% 0px -50% 0px" });
+
+    byId.forEach((link, id) => observer.observe(document.getElementById(id)));
+
+}
+
+/* ==========================================================
+   HAPTIC FEEDBACK
+   A very short vibration on tap, on phones that support it
+   (Android browsers). Skipped for mouse users and when the
+   visitor prefers reduced motion.
+========================================================== */
+
+function initializeHaptics() {
+
+    const canVibrate = "vibrate" in navigator &&
+        window.matchMedia("(pointer: coarse)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!canVibrate) return;
+
+    const selector = ".btn-primary-custom, .btn-outline-custom, .btn-icon, " +
+        ".output-card, .artifact-index a, #backToTop, .nav-link";
+
+    document.addEventListener("pointerdown", event => {
+
+        if (event.target.closest(selector)) navigator.vibrate(8);
+
+    }, { passive: true });
 
 }

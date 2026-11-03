@@ -6,7 +6,7 @@ https://audyr2g.github.io/audrey-portfolio/.
 
 ## Stack
 
-- Plain HTML pages with no build step: `index.html`, `about.html`, `expectations.html`, `prelim.html`
+- Plain HTML pages with no build step: `index.html`, `about.html`, `expectations.html`, `prelim.html`, `midterm.html`, `finals.html`
 - `css/style.css` (tokens + components), `css/responsive.css` (breakpoints), `js/script.js` (dark mode, scroll reveal, lightbox, nav)
 - Bootstrap 5.3.3, Bootstrap Icons 1.11.3 (jsDelivr) and Poppins (Google Fonts). Add no other libraries.
 - Artifacts are in `files/<period>/` and screenshots in `images/<period>/`
@@ -41,7 +41,10 @@ Then open http://localhost:8000/.
 
 ## Current state (November 2026)
 
-- The Prelim is published (7 artifacts). Midterm and later periods are not started yet.
+- **Prelim:** published, 7 artifacts.
+- **Midterm:** WW-M2 LendSuri proposal (PDF) and pitch deck (PDF view + .pptx) are published as group work. The PT-M1 RAG chatbot lab (`ITCC508_Lab_PT_M1_RAG_Chatbot_FINAL.ipynb` and its PDF report) is **not added yet**. When it arrives, add it as Exercise PT-M1 with renumbered artifacts and update the index count.
+- **Finals:** placeholder page with an "In Progress" status. Replace the status section with real artifacts when they exist, and drop `--pending` from the home card.
+- The home page has a Course Outputs section linking all three periods. Keep its card text in sync with each page.
 - `reflections.html` is empty and unlinked: fill it in or delete it.
 - About → Technical Skills leaves out the Prelim's evidenced skills (Python, Keras/TensorFlow, NLP).
-- Dark-mode contrast, focus styles and reduced motion need fixing (details in the eportfolio-ui skill).
+- The Midterm page has no personal Learning Reflection yet. Ask Audrey for it; don't write one for her.

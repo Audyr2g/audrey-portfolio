@@ -17,30 +17,35 @@ the most common way to make this site look inconsistent.
    small-screen rule in `css/responsive.css`, and tell the user you added a new component.
 3. Never hard-code a colour, shadow or radius that a token already covers.
 
-## Tokens (`:root` in style.css)
+## Tokens
+
+The original tokens are at the top of `style.css`. The **REFRESH (November 2026)** block at the
+end of `style.css` overrides several of them, so the values below are the ones that apply. Put
+new overrides in that block too, not in the original rules.
 
 | Token | Light | Dark (`body.dark-mode`) | Use |
 |---|---|---|---|
-| `--primary` | `#2563EB` | same (see the known issues) | links, active nav, badges, outline buttons |
-| `--secondary` | `#3B82F6` | same | the second stop of the gradient button |
-| `--accent` | `#60A5FA` | same | soft highlights and hero glow |
+| `--primary` | `#2563EB` | `#60A5FA` | links, active nav, badges, buttons |
+| `--secondary` | `#1D4ED8` | `#3B82F6` | primary-button hover |
+| `--accent` | `#60A5FA` | `#93C5FD` | focus ring and highlights |
+| `--primary-soft` | 8% blue | 12% light blue | pill and icon backgrounds |
 | `--background` | `#F8FAFC` | `#0F172A` | page background |
 | `--surface` | `#FFFFFF` | `#1E293B` | `.bg-white` sections and cards |
 | `--text` | `#1E293B` | `#F8FAFC` | headings |
 | `--text-light` | `#64748B` | `#CBD5E1` | body paragraphs |
 | `--border` | `#E2E8F0` | `#334155` | dividers |
-| `--shadow-sm/md/lg` | slate shadows at 6%, 10% and 14% | | resting card / glass / hover-or-hero |
-| `--radius` | `22px` | | cards and glass |
-| `--transition` | `.35s ease` | | all hover transitions |
+| `--shadow-sm/md/lg` | soft layered slate shadows | | resting / hover / hero |
+| `--radius` / `--radius-sm` | `16px` / `12px` | | cards / inner boxes |
+| `--transition` | `.22s` + `--ease-out` | | hover transitions |
 
 Pills (badges, buttons) use `border-radius: 999px`. A tinted pill background is
 `rgba(37, 99, 235, .10)`.
 
-**Type:** Poppins 300–800. `h1` is `clamp(3rem, 6vw, 5rem)`, `h2` is `clamp(2rem, 4vw, 3rem)`
-and `h3` is `1.5rem`, all at weight 700 and line-height 1.2. Body text has line-height 1.8, and
+**Type:** Poppins 300–800. `h1` is `clamp(2.4rem, 5vw, 3.75rem)`, `h2` is `clamp(1.7rem, 3.2vw, 2.4rem)`
+and `h3` is `1.2rem` at weight 600. Headings use letter-spacing -0.02em. Eyebrow pills are small uppercase text with tracking. Body text has line-height 1.8, and
 `p` uses `--text-light`. Don't add a second typeface.
 
-**Spacing:** `section` has `padding: 110px 0`, which responsive.css shrinks. Content sits inside
+**Spacing:** `section` has `padding: 96px 0`, which responsive.css shrinks. Content sits inside
 `.container-custom` (`min(1200px, 92%)`). Use Bootstrap's grid (`row g-4`, `col-lg-6`) and
 spacing utilities (`mt-4`, `p-5`). Sections alternate between plain and `.bg-white`.
 
@@ -51,8 +56,11 @@ spacing utilities (`mt-4`, `p-5`). Sections alternate between plain and `.bg-whi
 | Top-of-page title | `.page-banner` (eyebrow `.badge-soft` → `h1` → `p`) | any inner page |
 | Home hero | `.hero`, `.hero-badge`, `.hero-title span`, `.hero-buttons`, `.hero-image` | index.html |
 | Section title | `.section-header` > `span` (pill eyebrow), `h2`, `p` | all pages |
-| Main content card | `.glass p-5 fade-up` | prelim.html |
+| Main content card | `.glass p-5 fade-up` (now a solid surface with a hairline border, not frosted glass) | prelim.html |
 | List card | `.dashboard-card` + `.dashboard-list` | about.html (Skills) |
+| Course output card | `.output-grid` > `a.output-card` with `.output-period`, h3, p and `.output-link`; add `--pending` for unfinished periods | index.html, finals.html |
+| Status pill | `.status-pill` + `.status-dot` | finals.html |
+| Slides viewer | `.artifact-frame.artifact-frame--slides` (16:10) | midterm.html |
 | Skill tile / progress | `.skill-card`, `.skill-progress span` (width = %) | style.css (not used on a page yet) |
 | Small fact box | `.info-box` (h5 in primary) in `.about-info` grid | style.css (not used on a page yet) |
 | Chronology | `.timeline` / `.timeline-item` | about.html (Education) |
@@ -76,6 +84,9 @@ Icons come only from Bootstrap Icons (`<i class="bi bi-…">`). For decorative i
   surface needs a `body.dark-mode` rule. Test both themes.
 - **Scroll reveal:** an IntersectionObserver adds `.show` to `.fade-up`, `.dashboard-card`, `.timeline-item`,
   and similar. Put `fade-up` on new blocks. Don't write a second observer.
+- **Refresh additions:** a reading-progress bar (`.scroll-progress`, injected automatically), `.artifact-index a.is-current`
+  (scrollspy), and haptics (an 8 ms `navigator.vibrate` on tap; it only fires on touch screens without reduced motion).
+  Tactile feedback for new controls comes from CSS: lift on `:hover`, then `scale(.97–.985)` on `:active`.
 - The script already handles the navbar shrinking on scroll, the active-nav highlight, smooth `#anchor`
   scrolling, closing the mobile menu on click, the lightbox, Escape to close, and back-to-top.
 
@@ -93,22 +104,18 @@ which hides overflow bugs rather than fixing them, so check `document.documentEl
 - Images have meaningful `alt` text. Embedded files have a `title`. Heading levels don't skip.
 - Motion respects `prefers-reduced-motion`.
 
-### Known issues (measured November 2026; fix only when asked or when touching that area)
+### Fixed in the November 2026 refresh (keep it that way)
 
-1. **Dark-mode blue fails contrast:** `--primary #2563EB` is 2.83:1 on dark `--surface` and
-   3.45:1 on dark `--background`. That affects active nav links, badges, outline buttons and info-box headings.
-   The fix is to set `--primary: #60A5FA` inside `body.dark-mode` (7.0:1 on `#0F172A`).
-   The gradient button keeps white text, so check it still reads well.
-2. **White text on the gradient button** is 5.17:1 at the `#2563EB` end but only 3.68:1 at the `#3B82F6` end.
-   Darken `--secondary` (e.g. `#1D4ED8`) if you touch the buttons.
-3. **No visible focus styles:** there are no `:focus-visible` rules, and `button { outline: none }` removes
-   the default ring. Add `:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }`.
-4. **No reduced-motion support:** wrap the `fade-up`, hover lifts and `scroll-behavior: smooth` in
-   `@media (prefers-reduced-motion: no-preference)`, or disable them under `reduce`.
+- Dark-mode contrast: `--primary` switches to `#60A5FA` in dark mode, and primary buttons use dark text there.
+- Bootstrap's `.bg-white` is `!important`, which had kept alternate sections white in dark mode.
+  The override `.bg-white { background-color: var(--surface) !important; }` must stay.
+- `:focus-visible` ring, `prefers-reduced-motion` support, and the `g-5` row overflow at phone width (`--bs-gutter-x: 1.5rem` under 576px).
 
 ## Verify every UI change
 
-Serve the site with `python3 -m http.server 8000` and use Playwright (Chromium is preinstalled; don't install it):
+Serve the site with `python3 -m http.server 8000` and use Playwright (Chromium is preinstalled; don't install it).
+If the CDN is blocked in the sandbox, route `cdn.jsdelivr.net` to local copies from `npm pack bootstrap@5.3.3 bootstrap-icons@1.11.3`,
+or the screenshots will show the page without Bootstrap.
 1. Take screenshots at 1280×800 and at a 390px-wide phone size, in light **and** dark mode. To get dark mode,
    set `localStorage.theme = "dark"` and reload. The site's `fade-up` elements start hidden,
    so scroll through the page or add the `show` class before taking screenshots.

@@ -470,3 +470,47 @@
     }
 
 }
+/* ==========================================================
+   REFRESH (November 2026)
+========================================================== */
+
+@media (max-width: 1200px) and (min-width: 992px) {
+
+    .navbar-nav .nav-link {
+        padding: .5rem .55rem;
+        font-size: .88rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 72px 0;
+    }
+
+    .page-banner {
+        padding: 120px 0 56px;
+    }
+
+    .artifact-frame--slides {
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Bootstrap's g-5 gutter is wider than the 4% side margin of
+       .container-custom, which pushed rows ~9px past the screen. */
+    .row.g-5 {
+        --bs-gutter-x: 1.5rem;
+    }
+
+    .output-card,
+    .dashboard-card {
+        padding: 22px;
+    }
+
+    .glass.p-5 {
+        padding: 1.75rem !important;
+    }
+}
