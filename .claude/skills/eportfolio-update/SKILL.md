@@ -18,15 +18,16 @@ No build step. GitHub Pages serves `main` directly.
 2. **Measure file metadata yourself**: sizes (`du -k`, round to KB/MB as the site does),
    PDF pages (`pdfinfo` or pypdf), notebook cells (count `cells` in the .ipynb JSON),
    workbook rows (openpyxl). Use these numbers in the `file-meta` span and `Format` caption.
-3. **Read before writing.** Open `prelim.html` and copy the patterns it already uses.
+3. **For any visual or layout work, follow the `eportfolio-ui` skill.**
+4. **Read before writing.** Open `prelim.html` and copy the patterns it already uses.
    Don't add new CSS classes or libraries unless the user asks for a redesign.
-4. **Every new page goes into the nav and footer of every page**: `index.html`, `about.html`,
+5. **Every new page goes into the nav and footer of every page**: `index.html`, `about.html`,
    `expectations.html`, `prelim.html` and any new period page. The current page's nav
    link gets `class="nav-link active"`, and only that one.
-5. **Writing voice**: first person, specific and honest about results, including ones
+6. **Writing voice**: first person, specific and honest about results, including ones
    that disappointed. Prose is in British spelling (as in the existing pages, e.g. "regularisation"),
    dates are written as "14 August 2026", and HTML entities are used (`&mdash;`, `&ndash;`, `&middot;`, `&amp;`).
-6. Don't commit generated junk. Commit only when the user asks, then push (or, if
+7. Don't commit generated junk. Commit only when the user asks, then push (or, if
    push is blocked, hand back the changed files and say where each one goes).
 
 ## Period page: copy the structure of `prelim.html`
