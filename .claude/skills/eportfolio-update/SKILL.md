@@ -27,8 +27,8 @@ No build step. GitHub Pages serves `main` directly.
 6. **Writing voice**: first person, specific and honest about results, including ones
    that disappointed. Prose is in British spelling (as in the existing pages, e.g. "regularisation"),
    dates are written as "14 August 2026", and HTML entities are used (`&mdash;`, `&ndash;`, `&middot;`, `&amp;`).
-7. Don't commit generated junk. Commit only when the user asks, then push (or, if
-   push is blocked, hand back the changed files and say where each one goes).
+7. Don't commit generated junk. When a change is finished and checked, commit it and push to `main`
+   without asking (Audrey's standing instruction). If the push is blocked, hand back the changed files and say where each one goes.
 
 ## Period page: copy the structure of `prelim.html`
 

@@ -37,6 +37,7 @@ Then open http://localhost:8000/.
 
 - Work on `main`, which is what GitHub Pages deploys. Every push goes live within about a minute.
 - Audrey also edits on GitHub directly, so run `git pull --rebase origin main` before you commit.
+- **Push automatically.** Audrey asked for every finished change to be committed and pushed to `main` without asking first. Still pull first, and still check the change before pushing.
 - Commit messages are short and imperative, e.g. "Add Midterm Output page".
 
 ## Current state (November 2026)
