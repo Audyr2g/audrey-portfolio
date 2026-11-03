@@ -219,6 +219,14 @@
 
                 </a>
 
+                <a href="#reflection">
+
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
+
+                    <span>Learning Reflection</span>
+
+                </a>
+
             </nav>
 
         </div>
@@ -553,10 +561,265 @@
     </section>
 
     <!-- ==========================================
+         LEARNING REFLECTION
+    =========================================== -->
+
+    <section class="bg-white" id="reflection">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Reflection</span>
+
+                <h2>Learning Reflection</h2>
+
+                <p>
+
+                    What these artifacts show about my growth, what I would do
+                    differently, and where I am taking this next.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-5 fade-up">
+
+                <h3>
+
+                    How These Artifacts Demonstrate My Growth
+
+                </h3>
+
+                <p>
+
+                    The Prelim ended with a lesson I learned the
+                    hard way: a model can look excellent on
+                    validation data and still generalize poorly.
+                    The Midterm was the first chance I had to
+                    act on that before running anything. In the
+                    LendSuri proposal, the evaluation questions
+                    are kept separate from the knowledge base,
+                    and the expected answer and source passage
+                    for each question are set in advance. In my
+                    Prelim critique I wrote that I should have
+                    fixed my selection rule before my
+                    experiments; in this project the rule is
+                    part of the plan from the start.
+
+                </p>
+
+                <p>
+
+                    The kind of problem also changed. In the
+                    Prelim I was given a task and tried to score
+                    well on it. In WW-M2 my group had to define
+                    the task ourselves: pick a domain, narrow
+                    cybersecurity down to one information need,
+                    and decide what the chatbot would refuse to
+                    do. Much of the proposal is about those
+                    boundaries rather than about the model.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Competencies I Developed
+
+                </h3>
+
+                <p>
+
+                    I can now explain how a Retrieval-Augmented
+                    Generation system divides the work. The
+                    retriever finds the relevant documents, and
+                    the language model explains what is in them.
+                    LendSuri depends on that split. SEC records
+                    change over time, so the plan updates the
+                    knowledge base when new records appear and
+                    leaves the model, Llama-SEA-LION-v3-8B-IT,
+                    without any fine-tuning.
+
+                </p>
+
+                <p>
+
+                    I also learned to scope a research question
+                    so it can be measured. Ours is limited to
+                    one platform type, one regulator, and one
+                    information need, and it names four
+                    measures: retrieval accuracy, answer
+                    correctness, groundedness, and the handling
+                    of questions the knowledge base cannot
+                    answer. Working through SEC Memorandum
+                    Circular No. 20 and the 2026 OLP Disclosure
+                    Guide showed me a distinction the chatbot
+                    has to respect. A lending company's SEC
+                    registration and an online lending
+                    platform's recording are separate records,
+                    so one cannot stand in for the other.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Accomplishments
+
+                </h3>
+
+                <p>
+
+                    My group completed a five-page IEEE-format
+                    proposal and an eight-slide pitch for
+                    LendSuri, a chatbot that retrieves SEC
+                    records on Philippine online lending
+                    platforms and explains them with their
+                    sources and dates. The project is framed
+                    under SDG 16, Target 16.10, which concerns
+                    public access to information, and the
+                    problem is grounded in figures such as the
+                    47,446 complaints about allegedly abusive
+                    lending apps that PAOCC received between
+                    August 2024 and January 2026.
+
+                </p>
+
+                <p>
+
+                    The decision I would defend most readily is
+                    how LendSuri treats missing or outdated
+                    evidence. If a platform is absent from the
+                    knowledge base, the chatbot says the
+                    evidence is insufficient instead of calling
+                    the platform safe or unsafe. An older
+                    registry entry is shown alongside any newer
+                    SEC advisory, so it is never presented as
+                    proof of current authorization on its own.
+                    The pitch sums this up in its last line:
+                    LendSuri doesn&rsquo;t decide who&rsquo;s
+                    safe; it shows what the SEC says.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Critique of My Own Work and What I Would Do Differently
+
+                </h3>
+
+                <p>
+
+                    <strong>Nothing in the proposal has been
+                    tested yet.</strong> All four measures are
+                    plans, and the deck itself calls the model a
+                    preliminary choice whose performance will be
+                    measured, not assumed. Until the evaluation
+                    runs, the proposal is a design argument. I
+                    would have liked at least a small retrieval
+                    test on a handful of SEC records before
+                    submitting, so that one claim in the paper
+                    rested on a result.
+
+                </p>
+
+                <p>
+
+                    <strong>The planned test set is
+                    small.</strong> About thirty questions have
+                    to cover current-registry cases, historical
+                    records, later SEC actions, unanswerable
+                    questions, and Filipino or Taglish phrasing.
+                    That leaves only a few questions per case
+                    type, which is the same weakness I found in
+                    my Prelim, where twelve test examples could
+                    swing the F1-score by 0.15 to 0.20. I would
+                    either grow the set or report results per
+                    case type with the count beside each score,
+                    so a reader can see how much weight each
+                    number can carry.
+
+                </p>
+
+                <p>
+
+                    <strong>The knowledge base is a
+                    snapshot.</strong> The registry data is
+                    dated on purpose so the experiment can be
+                    reproduced, but a borrower reading an answer
+                    may assume it is current. The proposal keeps
+                    a documented cutoff date; I would go further
+                    and have every answer state that date, so
+                    the limitation reaches the user and not only
+                    the paper.
+
+                </p>
+
+                <p>
+
+                    <strong>The hardware question is still
+                    open.</strong> The deck mentions a quantized
+                    model or hosted inference as ways around
+                    limited Colab GPU memory, but we did not
+                    choose between them. Quantization can change
+                    answer quality, so I would settle this early
+                    and run the evaluation on the exact setup we
+                    intend to use.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Short-Term Goals
+
+                </h3>
+
+                <p>
+
+                    Before the Finals period, I want to build
+                    the knowledge base with its snapshot date
+                    recorded for every source, and to write the
+                    evaluation questions, expected answers, and
+                    source passages before the first retrieval
+                    run, so the test set cannot drift toward
+                    what the system happens to do well. I also
+                    want to check early whether the model
+                    answers Filipino and Taglish questions as
+                    reliably as English ones, since the proposal
+                    assumes it can.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Long-Term Goals
+
+                </h3>
+
+                <p class="mb-0">
+
+                    The Prelim made me skeptical of a single
+                    good score. LendSuri moved that skepticism
+                    toward the person reading the output: a
+                    borrower may act on a chatbot&rsquo;s answer
+                    with real money. Over the rest of my degree
+                    I want to build systems that show their
+                    evidence and say plainly when they do not
+                    know &mdash; and to measure that behaviour
+                    instead of assuming it.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
          CLOSING
     =========================================== -->
 
-    <section class="bg-white">
+    <section>
 
         <div class="container-custom">
 

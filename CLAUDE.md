@@ -48,4 +48,4 @@ Then open http://localhost:8000/.
 - The home page has a Course Outputs section linking all three periods. Keep its card text in sync with each page.
 - `reflections.html` is empty and unlinked: fill it in or delete it.
 - About → Technical Skills leaves out the Prelim's evidenced skills (Python, Keras/TensorFlow, NLP).
-- The Midterm page has no personal Learning Reflection yet. Ask Audrey for it; don't write one for her.
+- The Midterm Learning Reflection was drafted by Claude from the WW-M2 documents at Audrey's request (November 2026). Audrey should review it so it matches her own experience.
