@@ -49,5 +49,6 @@ Then open http://localhost:8000/.
 - `reflection.html` ("Reflection" in the menu, "Course Reflection" in the footer) is the all-semester reflection: one real-life scenario per period, written in Audrey's voice by Claude with the humanizer skill (November 2026). Every number in it comes from her artifacts; keep it in sync if a period page changes.
 - The menu now has 7 links; between 992px and 1199px responsive.css shrinks the logo and link padding so it stays on one line. Check that width if you add another link.
 - The home page has a Course Outputs section linking all three periods (none pending now). Keep its card text in sync with each page.
-- About → Technical Skills leaves out the Prelim's evidenced skills (Python, Keras/TensorFlow, NLP).
+- Technical Skills (About list and home cards) include Python, Keras & TensorFlow, and NLP.
+- Audrey wants reflections as plain prose: no subheadings (h3) or bold lead-in labels inside the Learning Reflection sections or on reflection.html. Keep it that way.
 - The Midterm Learning Reflection was drafted by Claude from the PT-M1 and WW-M2 documents at Audrey's request (November 2026). Audrey should review it so it matches her own experience.
