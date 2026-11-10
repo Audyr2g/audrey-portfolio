@@ -6,7 +6,7 @@ https://audyr2g.github.io/audrey-portfolio/.
 
 ## Stack
 
-- Plain HTML pages with no build step: `index.html`, `about.html`, `expectations.html`, `prelim.html`, `midterm.html`, `finals.html`
+- Plain HTML pages with no build step: `index.html`, `about.html`, `expectations.html`, `prelim.html`, `midterm.html`, `finals.html`, `reflection.html`
 - `css/style.css` (tokens + components), `css/responsive.css` (breakpoints), `js/script.js` (dark mode, scroll reveal, lightbox, nav)
 - Bootstrap 5.3.3, Bootstrap Icons 1.11.3 (jsDelivr) and Poppins (Google Fonts). Add no other libraries.
 - Artifacts are in `files/<period>/` and screenshots in `images/<period>/`
@@ -46,6 +46,8 @@ Then open http://localhost:8000/.
 - **Midterm:** 4 artifacts: PT-M1 RAG chatbot over RA 9003 (individual report + notebook, 9 September 2026), then WW-M2 LendSuri proposal (PDF) and pitch deck (PDF view + .pptx) as group work.
 - **Finals:** published (November 2026), 8 artifacts: PT-F1 report + notebook, PT-F2 report + notebook + workbook + CSVs (individual, Member 3), WW-F1 & WW-F2 group report + conversational notebook (course name: "Lab exercise WW - F1 and F2 (Optimization and GPU Testing)"; the group also submitted three zips not on the site: question sheet, final dataset, raw SEC dataset). Its Final Project Learning Reflection was drafted by Claude from these files; Audrey says the WW-F1/WW-F2 activity was run jointly by the whole group with no individual split; *My Contributions* says so. Don't invent an individual role for it. The group report lists C3 = 800/100 for Member 3, while her PT-F2 report recommends 1800/180: don't present 800/100 as her choice.
 - Finals artifact dates are course weeks from Audrey's LMS (Week 14 PT-F1, 11–17 Oct; Week 15 PT-F2, 19–24 Oct; Week 16 WW-F1/F2, 26–31 Oct, turned in 4 Nov 2026), not file metadata, which is later export dates.
+- `reflection.html` ("Reflection" in the menu, "Course Reflection" in the footer) is the all-semester reflection: one real-life scenario per period, written in Audrey's voice by Claude with the humanizer skill (November 2026). Every number in it comes from her artifacts; keep it in sync if a period page changes.
+- The menu now has 7 links; between 992px and 1199px responsive.css shrinks the logo and link padding so it stays on one line. Check that width if you add another link.
 - The home page has a Course Outputs section linking all three periods (none pending now). Keep its card text in sync with each page.
 - About → Technical Skills leaves out the Prelim's evidenced skills (Python, Keras/TensorFlow, NLP).
 - The Midterm Learning Reflection was drafted by Claude from the PT-M1 and WW-M2 documents at Audrey's request (November 2026). Audrey should review it so it matches her own experience.

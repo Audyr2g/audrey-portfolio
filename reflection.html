@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Course Reflection | Audrey Benjamin Gutierrez</title>
+
+    <meta name="description"
+        content="Course Reflection for ITC-C508: what Audrey Benjamin Gutierrez's Prelim, Midterm and Finals work would mean in real-life situations.">
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVIGATION
+    =========================================== -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        <div class="container-custom">
+
+            <a class="navbar-brand" href="index.html">
+
+                <img src="images/jru.jpg" alt="Jose Rizal University Logo" class="navbar-logo">
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="about.html">
+
+                            About
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="expectations.html">
+
+                            Course Expectations
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="prelim.html">
+
+                            Prelim Output
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="midterm.html">
+
+                            Midterm Output
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="finals.html">
+
+                            Finals Output
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="reflection.html" aria-current="page">
+
+                            Reflection
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+
+                        <button id="darkModeToggle" class="btn-icon" aria-label="Toggle Dark Mode">
+
+                            <i class="bi bi-moon-stars-fill"></i>
+
+                        </button>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+    =========================================== -->
+
+    <section class="page-banner">
+
+        <div class="container-custom text-center">
+
+            <span class="badge-soft">
+
+                ITC-C508 &middot; Prelim to Finals
+
+            </span>
+
+            <h1>
+
+                Course Reflection
+
+            </h1>
+
+            <p>
+
+                Each period of ITC-C508 left me with a working system and a list of
+                ways it could fail. This page puts those failures in the places where
+                they would matter: a support desk, a barangay office, and a borrower
+                holding a loan app.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         PRELIM
+    =========================================== -->
+
+    <section class="bg-white" id="prelim">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Prelim &middot; In Real Life
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    An airline support inbox
+
+                </h2>
+
+                <p>
+
+                    My Prelim classifier sorted airline customer
+                    messages into praise, complaints, and urgent support
+                    requests. Picture it running at a real support desk,
+                    sending the urgent messages to a person first. The
+                    no-code version scored 91.67% on its in-vocabulary
+                    test cases, yet it read a sarcastic complaint as
+                    Positive_Praise. A sarcastic &ldquo;great
+                    service&rdquo; is exactly what a frustrated
+                    passenger writes, and that message would have gone
+                    to the wrong queue.
+
+                </p>
+
+                <p>
+
+                    The Keras rebuild hid a quieter problem. Five of my
+                    configurations tied on validation weighted F1,
+                    between 0.9051 and 0.9076, while their test
+                    F1-scores ranged from 0.5281 to 0.8296. If a support
+                    team had picked the wrong one of those five, nothing
+                    in the validation numbers would have warned them.
+                    With only twelve test examples I could not even say
+                    how much of that spread was noise. For a real
+                    deployment I would test on far more messages,
+                    include sarcastic and ambiguous ones on purpose, and
+                    check the urgent class on its own before trusting an
+                    overall score.
+
+                </p>
+
+                <a href="prelim.html" class="output-link">
+
+                    See the Prelim Output artifacts <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         MIDTERM
+    =========================================== -->
+
+    <section id="midterm">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Midterm &middot; In Real Life
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    A question at the barangay hall
+
+                </h2>
+
+                <p>
+
+                    In PT-M1 I built a chatbot over RA 9003, the solid
+                    waste law every local government unit has to follow.
+                    Picture a barangay officer asking it for the fine
+                    for littering before writing a citation. My chatbot
+                    refused, although Section 49(a) answers it, because
+                    a 500-character chunk had cut the peso amounts away
+                    from the offence they belong to. A refusal is safer
+                    than a wrong number, but the officer cannot tell
+                    &ldquo;the law does not say&rdquo; from &ldquo;the
+                    system could not find it&rdquo;.
+
+                </p>
+
+                <p>
+
+                    The opposite failure worried me more. When I deleted
+                    the one clause restricting the model to the
+                    retrieved text, it answered a question about Venus
+                    from memory in all three trials, with chunks of the
+                    waste law printed beside the answer as its sources.
+                    A resident reading that output would see citations
+                    and assume the answer came from them. In a real
+                    deployment I would treat the system prompt as a
+                    tested, versioned file, and split a statute by
+                    Section instead of by character count.
+
+                </p>
+
+                <p>
+
+                    LendSuri, my group&rsquo;s proposal, applied the
+                    same idea to money. A Filipino borrower who finds a
+                    lending app on Facebook wants to know what the SEC
+                    has on record about it. We designed LendSuri to show
+                    dated SEC records with their sources and to say when
+                    the evidence is insufficient, instead of telling
+                    anyone that a platform is safe.
+
+                </p>
+
+                <a href="midterm.html" class="output-link">
+
+                    See the Midterm Output artifacts <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         FINALS
+    =========================================== -->
+
+    <section class="bg-white" id="finals">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Finals &middot; In Real Life
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    A borrower checking a loan app
+
+                </h2>
+
+                <p>
+
+                    In the Finals we built and tested LendSuri. Picture
+                    a borrower typing a question about Peso2you before
+                    downloading it. My PT-F2 experiment found that no
+                    chunk size ever retrieved the Peso2you record. The
+                    retriever kept returning other records whose names
+                    share the words Peso, Cash and Loan, such as PesoQ.
+                    That is the dangerous case in real life: a borrower
+                    asks about one app and gets evidence about a
+                    similarly named one, and our corpus includes SEC
+                    advisories about lenders whose names were used by
+                    others, such as Tala and First Digital Finance. My
+                    PT-F1 prompt made the model refuse instead of
+                    guessing, which is the right behaviour, but the fix
+                    belongs in retrieval, with a retriever that also
+                    matches exact names.
+
+                </p>
+
+                <p>
+
+                    The group experiment added a limit that no prompt
+                    can solve. On the default free Colab CPU, LendSuri
+                    did not finish a single answer in about 40 minutes;
+                    on an L4 GPU it answered in about 11 seconds. A
+                    borrower deciding whether to install an app will not
+                    wait 40 minutes, so the hardware decides whether the
+                    system is usable at all. We also recorded only two
+                    timed trials and did not save the answers, so a real
+                    team could not audit why the CPU and GPU runs scored
+                    differently. On a real project I would log every
+                    response from the first run.
+
+                </p>
+
+                <a href="finals.html" class="output-link">
+
+                    See the Finals Output artifacts <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         CLOSING
+    =========================================== -->
+
+    <section id="takeaway">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    What I Am Taking Into Real Work
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    The Same Lesson, Three Times
+
+                </h2>
+
+                <p>
+
+                    Across all three periods the same thing kept
+                    happening. A system looked fine on the numbers I
+                    chose and failed somewhere I had not measured: in
+                    the Prelim it was a small test set, in PT-M1 a chunk
+                    boundary, and in the Finals two product names that
+                    share a word. In real use the person on the other
+                    end is a passenger, an officer or a borrower who
+                    acts on the answer.
+
+                </p>
+
+                <p class="mb-0">
+
+                    The habits I want to keep come straight from those
+                    failures. I want to decide how I will measure before
+                    I run anything, test the cases most likely to break,
+                    and build systems that show their evidence and say
+                    plainly when they do not know.
+
+                </p>
+
+                <div class="hero-buttons mt-4">
+
+                    <a href="prelim.html" class="btn-outline-custom">
+
+                        Prelim Output
+
+                    </a>
+
+                    <a href="midterm.html" class="btn-outline-custom">
+
+                        Midterm Output
+
+                    </a>
+
+                    <a href="finals.html" class="btn-primary-custom">
+
+                        Finals Output
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer class="footer">
+
+        <div class="container-custom">
+
+            <div class="row g-5">
+
+                <div class="col-lg-5">
+
+                    <h5>
+
+                        Audrey Portfolio
+
+                    </h5>
+
+                    <p>
+
+                        An academic ePortfolio showcasing my educational
+                        journey, technical skills, and course expectations as
+                        a Bachelor of Science in Information Technology student.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>
+
+                        Quick Links
+
+                    </h5>
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+
+                            Home
+
+                        </a>
+
+                        <a href="about.html">
+
+                            About
+
+                        </a>
+
+                        <a href="expectations.html">
+
+                            Course Expectations
+
+                        </a>
+
+                        <a href="prelim.html">
+
+                            Prelim Output
+
+                        </a>
+
+                        <a href="midterm.html">
+
+                            Midterm Output
+
+                        </a>
+
+                        <a href="finals.html">
+
+                            Finals Output
+
+                        </a>
+
+                        <a href="reflection.html">
+
+                            Course Reflection
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <h5>
+
+                        Student Information
+
+                    </h5>
+
+                    <p>
+
+                        Audrey Benjamin Gutierrez<br>
+
+                        Bachelor of Science in Information Technology
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="footer-bottom text-center">
+
+                <p class="mb-0">
+
+                    &copy;
+                    <span id="year"></span>
+
+                    Audrey Benjamin Gutierrez.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+         BACK TO TOP
+    =========================================== -->
+
+    <button id="backToTop" aria-label="Back To Top">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </button>
+
+    <!-- ==========================================
+         LIGHTBOX
+    =========================================== -->
+
+    <div class="lightbox" role="dialog" aria-label="Image Preview">
+
+        <img src="" alt="Enlarged preview of the selected screenshot">
+
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

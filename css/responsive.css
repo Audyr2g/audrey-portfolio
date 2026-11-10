@@ -474,11 +474,35 @@
    REFRESH (November 2026)
 ========================================================== */
 
-@media (max-width: 1200px) and (min-width: 992px) {
+@media (min-width: 992px) {
 
     .navbar-nav .nav-link {
-        padding: .5rem .55rem;
-        font-size: .88rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+
+    .navbar-logo {
+        height: 34px;
+    }
+
+    .navbar-nav {
+        gap: 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: .45rem .42rem;
+        font-size: .8rem;
+    }
+
+    .navbar-nav .nav-link::after {
+        left: .42rem;
+        right: .42rem;
+    }
+
+    .navbar-nav .nav-item.ms-lg-3 {
+        margin-left: .5rem !important;
     }
 }
 
