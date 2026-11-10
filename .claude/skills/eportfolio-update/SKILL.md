@@ -93,6 +93,5 @@ Every `<img>` needs a descriptive `alt` that says what the image shows.
 
 ## Known state (November 2026)
 
-- `reflections.html` is empty (0 bytes) and not linked. Either write it or delete it. Don't leave it blank.
 - About → Technical Skills lists only web skills. The Prelim proves Python, Keras/TensorFlow,
   NLP and experiment logging. Suggest adding them, with links to the artifacts as evidence.
