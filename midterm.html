@@ -877,156 +877,51 @@
 
                 <p>
 
-                    In my Prelim critique I admitted that my experiments
-                    changed more than one variable at a time, so I could
-                    not say which change caused a result. PT-M1 gave me
-                    the same trap in the lab instructions: the stress
-                    test raised the temperature and deleted the fallback
-                    sentence together. This time I noticed before
-                    drawing a conclusion and added a third configuration
-                    that changed only the restriction clause. That one
-                    extra run is what showed the prompt, not the
-                    temperature, decided whether the chatbot stayed
-                    grounded.
+                    In PT-M1 I built my first RAG chatbot, over RA 9003,
+                    the solid waste management law. I split its seven
+                    chapters into 239 chunks, indexed them in ChromaDB
+                    and answered questions with a model on Groq. Two
+                    things broke along the way: Groq had retired the
+                    model named in the template, and the
+                    template&rsquo;s LangChain imports stopped working
+                    after version 1.0, so I switched to
+                    openai/gpt-oss-20b and fixed the imports. The
+                    lab&rsquo;s stress test changed the temperature and
+                    the prompt at the same time, so I added a third run
+                    that removed only the line telling the model to
+                    stick to the retrieved text. Without that line it
+                    answered a question about Venus from memory in all
+                    three trials, which showed me the prompt mattered
+                    far more than the temperature.
 
                 </p>
 
                 <p>
 
-                    The Prelim also ended with a lesson I learned the
-                    hard way: a model can look excellent on validation
-                    data and still generalize poorly. In the LendSuri
-                    proposal my group planned for that from the start,
-                    keeping the evaluation questions separate from the
-                    knowledge base and fixing the expected answer and
-                    source passage for each one in advance. The Midterm
-                    moved me from tuning a model I was given to defining
-                    what a system should and should not do.
-
-                </p>
-
-                <p>
-
-                    I can now build a RAG pipeline end to end with
-                    LangChain: load documents, split them with
-                    RecursiveCharacterTextSplitter, embed them with
-                    all-MiniLM-L6-v2, index them in ChromaDB, and
-                    assemble a retrieval chain around a hosted model. I
-                    also learned to keep it running when its
-                    dependencies move. The template&rsquo;s model was
-                    decommissioned by Groq and its imports broke under
-                    LangChain 1.0, and both were fixed in configuration
-                    and imports rather than in my own logic.
-
-                </p>
-
-                <p>
-
-                    I learned to scope a research question so it can be
-                    measured. LendSuri&rsquo;s is limited to one
-                    platform type, one regulator, and one information
-                    need, and it names four measures: retrieval
-                    accuracy, answer correctness, groundedness, and the
-                    handling of questions the knowledge base cannot
-                    answer. Working through the SEC sources also showed
-                    me a distinction the chatbot has to respect: a
-                    lending company&rsquo;s SEC registration and an
-                    online lending platform&rsquo;s recording are
-                    separate records.
-
-                </p>
-
-                <p>
-
-                    In PT-M1 I showed that a single clause of plain
-                    English was the whole difference between a grounded
-                    assistant and an ungrounded one. With the
-                    restriction clause removed, the model answered the
-                    Venus question from memory in all three trials, and
-                    its answers drifted in substance from 735 K to
-                    460&ndash;470 &deg;C to 464 &deg;C. Those answers
-                    were roughly correct, which is what makes the
-                    failure dangerous: nothing tells the user the system
-                    has stopped using its documents.
-
-                </p>
-
-                <p>
-
-                    My group completed a five-page IEEE-format proposal
-                    and an eight-slide pitch for LendSuri. The decision
-                    I would defend most readily is how it treats missing
-                    evidence: if a platform is absent from the knowledge
-                    base, LendSuri says the evidence is insufficient
-                    instead of calling the platform safe or unsafe. The
-                    pitch sums this up in its last line: LendSuri
-                    doesn&rsquo;t decide who&rsquo;s safe; it shows what
-                    the SEC says.
-
-                </p>
-
-                <p>
-
-                    My chunking ignored the structure of the
-                    law. The littering fine was split from its
-                    offence because Section 49 refers back to Section 48
-                    only by cross-reference, and fixed 500-character
-                    chunks cut straight through it. Raising k did not
-                    help. I should have split the statute by Section
-                    from the start, since the corpus was already
-                    organised by chapter.
-
-                </p>
-
-                <p>
-
-                    My stress test was narrow. Each
-                    configuration ran three times on one out-of-domain
-                    question. That was enough to show the restriction
-                    clause matters, but not to say how often a grounded
-                    configuration still slips. A set of out-of-domain
-                    and near-domain questions would have given a rate
-                    instead of an example.
-
-                </p>
-
-                <p>
-
-                    The LendSuri proposal has not been tested
-                    yet. All four of its measures are plans,
-                    and its planned test set of about thirty questions
-                    has to cover several case types and languages. That
-                    leaves only a few questions per case, the same
-                    small-sample weakness I found in the Prelim. I would
-                    report results per case type with the count beside
-                    each score.
-
-                </p>
-
-                <p>
-
-                    Before the Finals, I want to apply what PT-M1 taught
-                    me to LendSuri: keep the restriction clause and the
-                    source printout in every version of the prompt,
-                    treat the prompt as a versioned file, and test chunk
-                    sizes on the LendSuri records instead of assuming a
-                    default. I also want to check early whether the
-                    model answers Filipino and Taglish questions as
-                    reliably as English ones, since the proposal assumes
-                    it can.
+                    For WW-M2 my group proposed LendSuri, a chatbot that
+                    helps Filipino borrowers check what the SEC has on
+                    record about an online lending app. We wrote a
+                    five-page IEEE proposal and an eight-slide pitch.
+                    The decision I agree with most is that LendSuri
+                    never calls a lending app safe. It shows the dated
+                    SEC records with their sources, and when the
+                    evidence isn&rsquo;t there it says so.
 
                 </p>
 
                 <p class="mb-0">
 
-                    PT-M1 made the risk concrete: a chatbot can give a
-                    confident, correct-sounding answer with sources
-                    printed beside it that have nothing to do with the
-                    answer. A borrower using LendSuri may act on what it
-                    says with real money. Over the rest of my degree I
-                    want to build systems that show their evidence and
-                    say plainly when they do not know &mdash; and to
-                    measure that behaviour instead of assuming it.
+                    Looking back, my weakest point was chunking. The
+                    littering question went unanswered because a
+                    500-character chunk cut the fine away from the
+                    offence, and raising k to 6 didn&rsquo;t help.
+                    Splitting the law by Section would probably have
+                    fixed it. I also tested only one out-of-domain
+                    question, three times, which is enough to show a
+                    problem but not how often it happens. Going into the
+                    Finals I wanted to test chunk sizes properly instead
+                    of trusting a default, and that is what I ended up
+                    doing for LendSuri.
 
                 </p>
 

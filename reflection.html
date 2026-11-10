@@ -198,33 +198,15 @@
 
                 <p class="mt-4">
 
-                    My Prelim classifier sorted airline customer
-                    messages into praise, complaints, and urgent support
-                    requests. Picture it running at a real support desk,
-                    sending the urgent messages to a person first. The
-                    no-code version scored 91.67% on its in-vocabulary
-                    test cases, yet it read a sarcastic complaint as
-                    Positive_Praise. A sarcastic &ldquo;great
-                    service&rdquo; is exactly what a frustrated
-                    passenger writes, and that message would have gone
-                    to the wrong queue.
-
-                </p>
-
-                <p>
-
-                    The Keras rebuild hid a quieter problem. Five of my
-                    configurations tied on validation weighted F1,
-                    between 0.9051 and 0.9076, while their test
-                    F1-scores ranged from 0.5281 to 0.8296. If a support
-                    team had picked the wrong one of those five, nothing
-                    in the validation numbers would have warned them.
-                    With only twelve test examples I could not even say
-                    how much of that spread was noise. For a real
-                    deployment I would test on far more messages,
-                    include sarcastic and ambiguous ones on purpose, and
-                    check the urgent class on its own before trusting an
-                    overall score.
+                    My Prelim classifier sorted airline messages into
+                    praise, complaints and urgent support requests. If a
+                    support desk relied on it, the sarcastic complaint
+                    it read as Positive_Praise would have landed in the
+                    wrong queue. My Keras models had a quieter blind
+                    spot: five of them tied on validation, but their
+                    test scores ranged from 0.5281 to 0.8296, and with
+                    only twelve test examples nothing told me which one
+                    to trust.
 
                 </p>
 
@@ -258,43 +240,15 @@
 
                 <p class="mt-4">
 
-                    In PT-M1 I built a chatbot over RA 9003, the solid
-                    waste law every local government unit has to follow.
-                    Picture a barangay officer asking it for the fine
-                    for littering before writing a citation. My chatbot
-                    refused, although Section 49(a) answers it, because
-                    a 500-character chunk had cut the peso amounts away
-                    from the offence they belong to. A refusal is safer
-                    than a wrong number, but the officer cannot tell
-                    &ldquo;the law does not say&rdquo; from &ldquo;the
-                    system could not find it&rdquo;.
-
-                </p>
-
-                <p>
-
-                    The opposite failure worried me more. When I deleted
-                    the one clause restricting the model to the
-                    retrieved text, it answered a question about Venus
-                    from memory in all three trials, with chunks of the
-                    waste law printed beside the answer as its sources.
-                    A resident reading that output would see citations
-                    and assume the answer came from them. In a real
-                    deployment I would treat the system prompt as a
-                    tested, versioned file, and split a statute by
-                    Section instead of by character count.
-
-                </p>
-
-                <p>
-
-                    LendSuri, my group&rsquo;s proposal, applied the
-                    same idea to money. A Filipino borrower who finds a
-                    lending app on Facebook wants to know what the SEC
-                    has on record about it. We designed LendSuri to show
-                    dated SEC records with their sources and to say when
-                    the evidence is insufficient, instead of telling
-                    anyone that a platform is safe.
+                    My RA 9003 chatbot refused to give the fine for
+                    littering because a chunk had split the amount from
+                    the offence, so a barangay officer asking it would
+                    get no answer even though the law has one. The worse
+                    case came when I removed one line from the prompt:
+                    it answered a question about Venus from memory while
+                    showing chunks of the waste law as its sources.
+                    Anyone reading that would trust an answer the
+                    documents never gave.
 
                 </p>
 
@@ -328,37 +282,15 @@
 
                 <p class="mt-4">
 
-                    In the Finals we built and tested LendSuri. Picture
-                    a borrower typing a question about Peso2you before
-                    downloading it. My PT-F2 experiment found that no
-                    chunk size ever retrieved the Peso2you record. The
-                    retriever kept returning other records whose names
-                    share the words Peso, Cash and Loan, such as PesoQ.
-                    That is the dangerous case: a borrower
-                    asks about one app and gets evidence about a
-                    similarly named one, and our corpus includes SEC
-                    advisories about lenders whose names were used by
-                    others, such as Tala and First Digital Finance. My
-                    PT-F1 prompt made the model refuse instead of
-                    guessing, which is the right behaviour, but the fix
-                    belongs in retrieval, with a retriever that also
-                    matches exact names.
-
-                </p>
-
-                <p>
-
-                    The group experiment added a limit that no prompt
-                    can solve. On the default free Colab CPU, LendSuri
-                    did not finish a single answer in about 40 minutes;
-                    on an L4 GPU it answered in about 11 seconds. A
-                    borrower deciding whether to install an app will not
-                    wait 40 minutes, so the hardware decides whether the
-                    system is usable at all. We also recorded only two
-                    timed trials and did not save the answers, so a real
-                    team could not audit why the CPU and GPU runs scored
-                    differently. On a real project I would log every
-                    response from the first run.
+                    With LendSuri, a borrower asking about Peso2you
+                    would never get the right record, because the
+                    retriever kept returning other apps with Peso, Cash
+                    or Loan in their names. When lenders&rsquo; names
+                    get copied, that kind of mix-up is the last thing a
+                    borrower needs. Speed mattered too: the free Colab
+                    CPU didn&rsquo;t finish one answer in about 40
+                    minutes, and nobody checking a loan app would wait
+                    that long.
 
                 </p>
 
@@ -367,73 +299,6 @@
                     See the Finals Output artifacts <i class="bi bi-arrow-right" aria-hidden="true"></i>
 
                 </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ==========================================
-         CLOSING
-    =========================================== -->
-
-    <section id="takeaway">
-
-        <div class="container-custom">
-
-            <div class="glass p-5 fade-up">
-
-                <span class="badge-soft">
-
-                    What I Am Taking Into Real Work
-
-                </span>
-
-                <p class="mt-4">
-
-                    Across all three periods the same thing kept
-                    happening. A system looked fine on the numbers I
-                    chose and failed somewhere I had not measured: in
-                    the Prelim it was a small test set, in PT-M1 a chunk
-                    boundary, and in the Finals two product names that
-                    share a word. In real use the person on the other
-                    end is a passenger, an officer or a borrower who
-                    acts on the answer.
-
-                </p>
-
-                <p class="mb-0">
-
-                    The habits I want to keep come straight from those
-                    failures. I want to decide how I will measure before
-                    I run anything, test the cases most likely to break,
-                    and build systems that show their evidence and say
-                    plainly when they do not know.
-
-                </p>
-
-                <div class="hero-buttons mt-4">
-
-                    <a href="prelim.html" class="btn-outline-custom">
-
-                        Prelim Output
-
-                    </a>
-
-                    <a href="midterm.html" class="btn-outline-custom">
-
-                        Midterm Output
-
-                    </a>
-
-                    <a href="finals.html" class="btn-primary-custom">
-
-                        Finals Output
-
-                    </a>
-
-                </div>
 
             </div>
 
