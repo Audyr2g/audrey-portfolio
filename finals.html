@@ -1363,205 +1363,55 @@
 
                 <p>
 
-                    In the Prelim I tuned my models against validation
-                    scores and only afterwards noticed that the test
-                    scores told a different story. In my critique I
-                    wrote that I should have fixed my selection rule
-                    before running anything. The Midterm proposal
-                    planned to set expected answers in advance. In PT-F2
-                    I finally did it: every one of the eighteen evidence
-                    units was located by its exact text before the first
-                    configuration ran, and the run stopped if a passage
-                    was missing or appeared twice.
+                    I was Member 3 of QuantumStack, so my main job was
+                    the Member 3 dataset: 126 pages of SEC records on
+                    lending companies and online lending platforms. When
+                    I started the chunking experiment I noticed that
+                    every page repeated the same header, page number and
+                    disclaimer, which added up to about a fifth of the
+                    text, so I cleaned those out before testing
+                    anything. I also checked the evidence for the three
+                    Member 3 questions and wrote six more of my own. For
+                    WW-F1 and WW-F2 we didn&rsquo;t split the work. The
+                    three of us combined our datasets, ran the tests on
+                    the CPU and the L4 GPU, checked the answers and
+                    wrote the report together.
 
                 </p>
 
                 <p>
 
-                    I also kept to the rule when it went against me. At
-                    one configuration the top chunk for the Tala
-                    question held 143 of the 150 characters of the
-                    advisory and was still scored a miss under full
-                    containment. A looser threshold would have counted
-                    it, but I had fixed the rule before seeing the
-                    scores, and changing it afterwards would have made
-                    the comparison meaningless. A semester ago I would
-                    have adjusted the metric.
-
-                </p>
-
-                <p>
-
-                    I was Member 3 of QuantumStack, and my part of
-                    LendSuri was the Member 3 dataset: 126 pages of
-                    prepared SEC records covering the January 2026
-                    registry snapshot, the 2021 historical list, SEC
-                    advisories, and framework and complaint guidance. In
-                    PT-F2 I found that a repeated running header, page
-                    number, label and disclaimer made up 20.9 percent of
-                    its text (34,368 of 164,290 characters). I removed
-                    them and re-rendered the file one record per page so
-                    the gold pages still applied. A cleaned Member 3
-                    corpus is one of the three member PDFs in the
-                    group&rsquo;s 379-page knowledge base.
-
-                </p>
-
-                <p>
-
-                    I verified the evidence for the three Member 3
-                    questions that came with the dataset package and
-                    wrote six more from the corpus to cover record types
-                    the first three did not use. The group&rsquo;s nine
-                    fixed questions took three from each member&rsquo;s
-                    dataset. In PT-F1 I moved the provided notebook from
-                    FLAN-T5 to our assigned model, SEA-LION, and wrote a
-                    prompt with four rules specific to SEC lending
-                    records, including never attributing an
-                    impersonation advisory to the registered company it
-                    names.
-
-                </p>
-
-                <p>
-
-                    The WW-F1 and WW-F2 experiment itself we ran
-                    together as a group rather than splitting it into
-                    separate parts. We combined our three member
-                    datasets into one 379-page knowledge base, ran the
-                    three chunking configurations on both the High-RAM
-                    CPU and the L4 GPU, timed two trials for each of the
-                    nine questions, scored every answer for correctness
-                    and grounding, added the conversation memory to the
-                    final notebook, and wrote the report together. My
-                    share of that work was the same as everyone&rsquo;s:
-                    running the tests, checking the answers, and
-                    agreeing on what the results could and could not
-                    support.
-
-                </p>
-
-                <p>
-
-                    I can now build a retrieval pipeline end to end and
-                    measure it: extract and clean a PDF, chunk it, embed
-                    the chunks with normalised vectors, index them in
-                    FAISS or Chroma, and score retrieval with
-                    Precision@3, Recall@3 and MRR@3 against evidence
-                    fixed in advance. I learned to adapt an open model
-                    to a task as well, loading SEA-LION on a GPU,
-                    counting tokens against a 4,096-token budget, and
-                    writing guardrails into the prompt.
-
-                </p>
-
-                <p>
-
-                    The less obvious skill is statistical. With nine
-                    questions, one relevance decision moves Precision@3
-                    by 0.037, so I added bootstrap confidence intervals
-                    and exact sign tests with a Bonferroni correction.
-                    Those tests are why my report says the ranking from
-                    500 characters up is not settled, instead of naming
-                    a winner the data cannot support.
-
-                </p>
-
-                <p>
-
-                    Retrieval sets the ceiling for the whole system. The
-                    Peso2you question was never answered at any chunk
-                    size, because its record shares the words Peso, Cash
-                    and Loan with dozens of other records and the
-                    retriever kept returning those instead. In PT-F1 the
-                    model refused to answer rather than guess, which is
-                    what the guardrails asked for, but no prompt can fix
-                    evidence that never arrives. The likely fix is a
-                    hybrid retriever that also matches exact names.
-
-                </p>
-
-                <p>
-
-                    How you measure can change what you find. Scoring
-                    relevance by any character overlap instead of full
-                    containment raised Recall@3 by 0.105 at 300
-                    characters and by nothing at 1000 or 1800. If I had
-                    not checked both rules, I would have reported a
-                    chunk-size effect that was partly an effect of my
-                    own scoring rule.
-
-                </p>
-
-                <p>
-
-                    Hardware decides what is practical. In the group
-                    experiment the default free Colab CPU did not finish
-                    one answer in about 40 minutes, while the L4 GPU
-                    answered in about 11 seconds. That gap matters more
-                    for a chatbot people would actually use than any of
-                    the differences between chunk settings.
-
-                </p>
-
-                <p>
-
-                    My test set was too small again.
-                    Nine questions could show that the smallest chunks
-                    do worse but could not order the rest; no comparison
-                    survived correction. This is the same weakness I
-                    found in the Prelim with twelve test examples. Next
-                    time I would write thirty or more questions before
-                    tuning anything, as my own report recommends.
-
-                </p>
-
-                <p>
-
-                    I recommended a size the embedding model
-                    cannot fully read. all-MiniLM-L6-v2 stops
-                    at 256 word-pieces, and 69 of the 126 pages are
-                    longer than that at 1800 characters. None of my
-                    evidence fell in the cut-off part, but I should have
-                    tested a model with a longer input window before
-                    recommending whole-page chunks.
-
-                </p>
-
-                <p>
-
-                    The group benchmark kept too little
-                    evidence. We recorded two timed trials per
-                    question where the guide asked for three, and we did
-                    not save the generated answers. As a result we
-                    cannot explain why the CPU and GPU runs scored
-                    differently. Saving every response transcript would
-                    have cost almost nothing.
-
-                </p>
-
-                <p>
-
-                    I want to add exact name matching to the dense
-                    retriever and rerun the Peso2you and Mabilis Cash
-                    questions, since those are the failures chunk size
-                    could not fix. I also want to expand the test set
-                    past thirty questions and repeat the
-                    twelve-configuration comparison to see whether the
-                    1800 and 1000 character settings separate with more
-                    data.
+                    By the end of the Finals I could build a retrieval
+                    pipeline from a PDF all the way to an answer:
+                    cleaning the text, chunking it, embedding it,
+                    indexing it in FAISS or Chroma, and running SEA-LION
+                    on top. The part I learned most from was measuring
+                    it properly. I scored retrieval with Precision@3,
+                    Recall@3 and MRR@3 against evidence I fixed before
+                    any run, and I added significance tests because with
+                    only nine questions a single answer could move the
+                    score a lot. That is why my report doesn&rsquo;t
+                    name one best chunk size, even though the
+                    1800-character settings scored highest.
 
                 </p>
 
                 <p class="mb-0">
 
-                    Across the Prelim, Midterm and Finals, the work that
-                    I trust most is the work that shows its evidence and
-                    says what it cannot conclude. I want to keep
-                    building systems that way: retrieval that can be
-                    checked line by line, answers that state their dates
-                    and sources, and a model that says it does not know
-                    when the evidence is missing.
+                    My biggest takeaway is that the chatbot can only be
+                    as good as what it retrieves. No chunk size ever
+                    found the Peso2you record, because so many other
+                    platforms have Peso, Cash or Loan in their names,
+                    and in PT-F1 the model refused instead of guessing.
+                    A better prompt can&rsquo;t fix that, but a
+                    retriever that also matches exact names might. The
+                    group test taught me the practical side: the free
+                    Colab CPU never finished an answer in about 40
+                    minutes, while the L4 GPU took about 11 seconds. If
+                    I did it again I&rsquo;d write at least thirty test
+                    questions instead of nine, run three timed trials
+                    like the guide asked, and save every answer so we
+                    could explain our results later.
 
                 </p>
 
