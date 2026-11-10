@@ -210,6 +210,22 @@
 
                 </p>
 
+                <p>
+
+                    If I built it for real I would do a few things
+                    differently. I&rsquo;d train on far more than the 75
+                    examples I had, put sarcastic and ambiguous messages
+                    into the test set on purpose, and check how the
+                    model handles urgent requests on their own before
+                    trusting one overall accuracy number. My PT-P1 model
+                    also pushed general inquiries into one of its three
+                    labels because it had nowhere else to put them. A
+                    real support tool would need a way to say a message
+                    doesn&rsquo;t fit any category and pass it to a
+                    person.
+
+                </p>
+
                 <a href="prelim.html" class="output-link">
 
                     See the Prelim Output artifacts <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -252,6 +268,23 @@
 
                 </p>
 
+                <p>
+
+                    LendSuri, our group proposal, carried the same worry
+                    over to money. A borrower who finds a lending app on
+                    Facebook wants to know whether the SEC has it on
+                    record, and a confident wrong answer could cost
+                    them. That&rsquo;s why we planned for LendSuri to
+                    show the dated SEC records with their sources and to
+                    say when the evidence isn&rsquo;t enough, instead of
+                    calling any app safe. If I made the RA 9003 chatbot
+                    again, I&rsquo;d split the law by Section so a fine
+                    always stays with its offence, and I&rsquo;d treat
+                    the prompt as something to test, since deleting one
+                    line was enough to break it.
+
+                </p>
+
                 <a href="midterm.html" class="output-link">
 
                     See the Midterm Output artifacts <i class="bi bi-arrow-right" aria-hidden="true"></i>
@@ -291,6 +324,24 @@
                     CPU didn&rsquo;t finish one answer in about 40
                     minutes, and nobody checking a loan app would wait
                     that long.
+
+                </p>
+
+                <p>
+
+                    In my PT-F1 test the model at least refused to
+                    answer when the right record wasn&rsquo;t retrieved,
+                    which is better than naming the wrong company. A
+                    real version of LendSuri would still need a
+                    retriever that also matches exact app names, and
+                    many more than nine test questions before anyone
+                    relied on it. Our group only got usable speeds on
+                    the L4 GPU, so running something like LendSuri for
+                    real means planning for that hardware from the
+                    start. We also didn&rsquo;t save the generated
+                    answers, and that is the first thing I&rsquo;d fix,
+                    because without them nobody can check why a result
+                    came out the way it did.
 
                 </p>
 
