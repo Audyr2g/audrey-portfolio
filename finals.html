@@ -10,7 +10,7 @@
     <title>Finals Output | Audrey Benjamin Gutierrez</title>
 
     <meta name="description"
-        content="Finals Output for ITC-C508 by Audrey Benjamin Gutierrez.">
+        content="Finals Output for ITC-C508: chunk size and overlap experiments (PT-F1, PT-F2) and the LendSuri RAG CPU/GPU experiment and conversational chatbot (WW1 and WW2) by Audrey Benjamin Gutierrez.">
 
     <!-- Google Fonts -->
 
@@ -159,9 +159,10 @@
 
             <p>
 
-                This page will present my Finals work for ITC-C508. Its artifacts will be
-                published here, captioned and viewable in the same way as the Prelim
-                and Midterm outputs.
+                This page presents my Finals work for ITC-C508: two individual
+                experiments on chunk size and overlap for my LendSuri dataset, and
+                the group experiment that tuned LendSuri, compared CPU and GPU
+                performance, and added conversation memory to the chatbot.
 
             </p>
 
@@ -170,34 +171,1411 @@
     </section>
 
     <!-- ==========================================
-         STATUS
+         ARTIFACT INDEX
+    =========================================== -->
+
+    <section class="bg-white">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Navigation</span>
+
+                <h2>Artifact Index</h2>
+
+                <p>
+
+                    Eight artifacts are published on this page. Select any item to
+                    jump directly to it.
+
+                </p>
+
+            </div>
+
+            <nav class="artifact-index fade-up" aria-label="Artifact Index">
+
+                <a href="#artifact-1">
+
+                    <i class="bi bi-file-earmark-word" aria-hidden="true"></i>
+
+                    <span>1. PT-F1 Initial Preps Report</span>
+
+                </a>
+
+                <a href="#artifact-2">
+
+                    <i class="bi bi-journal-code" aria-hidden="true"></i>
+
+                    <span>2. PT-F1 Commented Notebook</span>
+
+                </a>
+
+                <a href="#artifact-3">
+
+                    <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+
+                    <span>3. PT-F2 Technical Report</span>
+
+                </a>
+
+                <a href="#artifact-4">
+
+                    <i class="bi bi-journal-code" aria-hidden="true"></i>
+
+                    <span>4. PT-F2 Experiment Notebook</span>
+
+                </a>
+
+                <a href="#artifact-5">
+
+                    <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
+
+                    <span>5. PT-F2 Results Workbook</span>
+
+                </a>
+
+                <a href="#artifact-6">
+
+                    <i class="bi bi-filetype-csv" aria-hidden="true"></i>
+
+                    <span>6. PT-F2 Retrieval Log &amp; Evidence</span>
+
+                </a>
+
+                <a href="#artifact-7">
+
+                    <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+
+                    <span>7. WW1 &amp; WW2 Group Report</span>
+
+                </a>
+
+                <a href="#artifact-8">
+
+                    <i class="bi bi-chat-dots" aria-hidden="true"></i>
+
+                    <span>8. LendSuri Chatbot Notebook</span>
+
+                </a>
+
+                <a href="#reflection">
+
+                    <i class="bi bi-lightbulb" aria-hidden="true"></i>
+
+                    <span>Final Project Learning Reflection</span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         EXERCISE PT-F1
     =========================================== -->
 
     <section>
 
         <div class="container-custom">
 
-            <div class="glass p-5 text-center fade-up status-card">
+            <div class="section-header fade-up">
 
-                <span class="status-pill">
+                <span>Lab Exercise PT-F1 &middot; Individual</span>
 
-                    <span class="status-dot" aria-hidden="true"></span>
+                <h2>Initial Preps</h2>
 
-                    In Progress
+                <p>
+
+                    Reviewing and commenting the retrieval notebook,
+                    preparing test questions with fixed evidence, and
+                    adapting the prompt and model to my dataset.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 1 -->
+
+    <section class="bg-white" id="artifact-1">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 1
 
                 </span>
 
                 <h2 class="mt-4">
 
-                    Finals Artifacts Coming Soon
+                    PT-F1 Initial Preps: Code Review, Test Questions, and Prompt Settings
 
                 </h2>
 
-                <p class="mt-3 mb-0">
+                <dl class="artifact-caption">
 
-                    The Finals period is still under way. Once my outputs are
-                    complete, each one will appear on this page with its caption,
-                    an inline viewer, and download links.
+                    <dt>Title</dt>
+
+                    <dd>ITCC508 Lab Exercise PT-F1 (Optimizing Chunk Size and Overlap): Initial Preps &mdash; Code Review, Test Questions, and Prompt Settings</dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>21 October 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Lab report, Word document, 5 pages</dd>
+
+                </dl>
+
+                <p>
+
+                    This report prepares the chunking experiment. It
+                    records my dataset, the Member 3 corpus of 126 SEC
+                    lending records, and the three Member 3 test
+                    questions with their expected answers and exact
+                    evidence pages. It names the final model,
+                    aisingapore/Llama-SEA-LION-v3-8B-IT, and gives the
+                    full prompt I wrote for it.
+
+                </p>
+
+                <p>
+
+                    The prompt adds four rules for this dataset: date
+                    and type every record used, treat a registry listing
+                    as evidence of recording only, never attribute an
+                    impersonation advisory to the registered company,
+                    and say which part of a question the evidence does
+                    not cover. At the 1000/200 baseline the model
+                    answered the difficult Tala question correctly and
+                    refused the Peso2you question instead of guessing,
+                    because page 46 was never retrieved.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/finals/ptf1-initial-preps-report.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+
+                            <p>
+
+                                Your browser cannot display this document inline.
+                                Please use the buttons below to open or download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/finals/ptf1-initial-preps-report.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Report
+
+                    </a>
+
+                    <a href="files/finals/ptf1-initial-preps-report.docx" class="btn-outline-custom" download>
+
+                        Download .docx
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-word" aria-hidden="true"></i>
+
+                        Word Document &middot; 5 pages &middot; 44 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 2 -->
+
+    <section id="artifact-2">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 2
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    PT-F1 Commented RAG Notebook
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>ITCC508 Lab Exercise PT-F1 &mdash; Initial Preps (Member 3 dataset)</dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>October 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Jupyter notebook, 59 cells, run on a Colab T4 GPU</dd>
+
+                </dl>
+
+                <p>
+
+                    The provided FAISS indexing and retrieval notebook,
+                    split into logical cells with a markdown explanation
+                    above each one. Component I extracts the PDF, chunks
+                    it, embeds the chunks with all-MiniLM-L6-v2 and
+                    builds a FAISS index. Component II retrieves the top
+                    three chunks and builds a token-limited prompt.
+
+                </p>
+
+                <p>
+
+                    The cells marked &ldquo;Changed for Step 3.1&rdquo;
+                    record how I moved the notebook from FLAN-T5 to
+                    SEA-LION: switching to a causal language model
+                    class, loading it on the GPU, and counting tokens
+                    without truncation so an over-long prompt fails
+                    loudly instead of being cut silently.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <iframe src="files/finals/ptf1-notebook.html"
+                        title="PT-F1 Commented RAG Notebook" loading="lazy"></iframe>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/finals/ptf1-notebook.html" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Notebook
+
+                    </a>
+
+                    <a href="files/finals/ptf1-notebook.ipynb" class="btn-outline-custom" download>
+
+                        Download .ipynb
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-journal-code" aria-hidden="true"></i>
+
+                        Jupyter Notebook &middot; 59 cells &middot; 428 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         EXERCISE PT-F2
+    =========================================== -->
+
+    <section class="bg-white">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Lab Exercise PT-F2 &middot; Individual</span>
+
+                <h2>Experimenting to Determine the Best Chunk</h2>
+
+                <p>
+
+                    A controlled comparison of twelve chunk size and
+                    overlap settings on the cleaned Member 3 corpus,
+                    scored against evidence fixed before any run.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 3 -->
+
+    <section id="artifact-3">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 3
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Chunk Size and Overlap in a FAISS-Based Retrieval Pipeline
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>Chunk Size and Overlap in a FAISS-Based Retrieval Pipeline: A Controlled Comparison of Twelve Configurations over Philippine SEC Online-Lending Records</dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>3 November 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>IEEE-format technical report, PDF, 6 pages</dd>
+
+                </dl>
+
+                <p>
+
+                    The central artifact of my Finals work. It compares
+                    twelve chunking configurations, a 4&times;3 grid of
+                    chunk size (300, 500, 1000 and 1800 characters) and
+                    overlap ratio (0, 10 and 20 percent), on the cleaned
+                    Member 3 corpus. Nine questions were broken into
+                    eighteen evidence units, each located by its exact
+                    text before any configuration was run, and every
+                    configuration was scored with Precision@3, Recall@3
+                    and MRR@3.
+
+                </p>
+
+                <p>
+
+                    The 1800-character configurations tied for the best
+                    scores (Recall@3 0.685, MRR@3 0.667), and the report
+                    recommends 1800 characters with 180 of overlap. It
+                    is also clear about what the data cannot settle:
+                    exact sign tests separate the leader from only one
+                    other configuration, and no comparison survives
+                    Bonferroni correction. Two findings hold up better.
+                    The rule used to judge relevance changes the scores
+                    more at small chunk sizes, and every configuration
+                    below 1000 characters leaves some evidence that no
+                    chunk holds whole.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/finals/ptf2-chunking-report.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+
+                            <p>
+
+                                Your browser cannot display this document inline.
+                                Please use the buttons below to open or download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/finals/ptf2-chunking-report.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Report
+
+                    </a>
+
+                    <a href="files/finals/ptf2-chunking-report.pdf" class="btn-outline-custom" download>
+
+                        Download Report
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+
+                        PDF &middot; 6 pages &middot; 376 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 4 -->
+
+    <section class="bg-white" id="artifact-4">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 4
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    PT-F2 Chunking Experiment Notebook
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>ITCC508 Lab Exercise PT-F2 &mdash; Optimizing Chunk Size and Overlap (Member 3 dataset)</dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>November 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Jupyter notebook, 64 cells, run on a Colab T4 GPU</dd>
+
+                </dl>
+
+                <p>
+
+                    The PT-F1 notebook extended with Component III, the
+                    experiment itself. The first cell locates every
+                    evidence passage in the normalised page text and
+                    stops if a passage is missing or appears more than
+                    once, then runs all twelve configurations, building
+                    a new index for each. The second cell scores every
+                    configuration and question and writes the results
+                    workbook.
+
+                </p>
+
+                <p>
+
+                    Because evidence is tracked by its position on the
+                    page rather than by chunk number, the same evidence
+                    is followed across all twelve configurations even
+                    though the chunks change every time. Retrieval is
+                    deterministic, so rerunning the notebook on the
+                    cleaned corpus reproduces the results table.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <iframe src="files/finals/ptf2-notebook.html"
+                        title="PT-F2 Chunking Experiment Notebook" loading="lazy"></iframe>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/finals/ptf2-notebook.html" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Notebook
+
+                    </a>
+
+                    <a href="files/finals/ptf2-notebook.ipynb" class="btn-outline-custom" download>
+
+                        Download .ipynb
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-journal-code" aria-hidden="true"></i>
+
+                        Jupyter Notebook &middot; 64 cells &middot; 308 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 5 -->
+
+    <section id="artifact-5">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 5
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    PT-F2 Experiment Results Workbook
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>Experiment Results &mdash; Tables A, B and C</dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>November 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Excel workbook, 4 sheets</dd>
+
+                </dl>
+
+                <p>
+
+                    The workbook behind the report&rsquo;s tables. Table
+                    A gives the configuration-level results for all
+                    twelve settings, Table B breaks them down by easy,
+                    average and difficult questions, Table C holds the
+                    full retrieval log, and a fourth sheet lists the
+                    score for every configuration and question.
+
+                </p>
+
+                <div class="artifact-actions mt-5">
+
+                    <a href="files/finals/ptf2-experiment-results.xlsx" class="btn-primary-custom" download>
+
+                        Download Workbook
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>
+
+                        Excel Workbook &middot; 4 sheets &middot; 44 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 6 -->
+
+    <section class="bg-white" id="artifact-6">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 6
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    PT-F2 Detailed Retrieval Log and Verified Evidence
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>Detailed Retrieval Log; Verified Test-Question Evidence</dd>
+
+                    <dt>Author</dt>
+
+                    <dd>Audrey Benjamin Gutierrez</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>November 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Two CSV files: 324 retrieval records and 18 evidence units</dd>
+
+                </dl>
+
+                <p>
+
+                    The retrieval log holds one row for every
+                    configuration, question and rank: 324 records, each
+                    with the retrieved chunk, its page and character
+                    range, its similarity score, and whether it counted
+                    as relevant. The evidence file lists the nine
+                    questions, their expected answers, and the exact
+                    text and character position of each of the eighteen
+                    evidence units.
+
+                </p>
+
+                <p>
+
+                    Together they let a reader check any single scoring
+                    decision in the report, such as why the Peso2you
+                    question scored zero in every configuration even
+                    when a chunk from the right page was returned.
+
+                </p>
+
+                <div class="artifact-actions mt-5">
+
+                    <a href="files/finals/ptf2-retrieval-log.csv" class="btn-primary-custom" download>
+
+                        Download Retrieval Log
+
+                    </a>
+
+                    <a href="files/finals/ptf2-verified-evidence.csv" class="btn-outline-custom" download>
+
+                        Download Evidence
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-filetype-csv" aria-hidden="true"></i>
+
+                        CSV &middot; 172 KB and 12 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         LAB EXERCISE WW1 AND WW2
+    =========================================== -->
+
+    <section id="group-overview">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Lab Exercise WW1 &amp; WW2 &middot; Group</span>
+
+                <h2>LendSuri: Tuning and CPU vs GPU</h2>
+
+                <p>
+
+                    My group combined our three member datasets, tested
+                    three chunking settings on a CPU and a GPU, and
+                    added conversation memory to the final LendSuri
+                    notebook.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-5 fade-up">
+
+                <h3>
+
+                    Recorded CPU and GPU Performance
+
+                </h3>
+
+                <p>
+
+                    Mean indexing and response times over nine questions, two timed
+                    trials per question, top-k&nbsp;=&nbsp;3. The highlighted row is
+                    the configuration the group recommended.
+
+                </p>
+
+                <div class="table-scroll">
+
+                    <table class="data-table">
+
+                        <caption class="visually-hidden">Recorded CPU and GPU performance for three RAG configurations</caption>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">Device</th>
+
+                                <th scope="col">Chunk / Overlap</th>
+
+                                <th scope="col">Index (s)</th>
+
+                                <th scope="col">Response (s)</th>
+
+                                <th scope="col">Correct</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>CPU</td>
+
+                                <td>500 / 100</td>
+
+                                <td>17.01</td>
+
+                                <td>255.83</td>
+
+                                <td>7/9</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>L4 GPU</td>
+
+                                <td>500 / 100</td>
+
+                                <td>2.62</td>
+
+                                <td>11.06</td>
+
+                                <td>7/9</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>CPU</td>
+
+                                <td>1,200 / 200</td>
+
+                                <td>17.41</td>
+
+                                <td>485.94</td>
+
+                                <td>5/9</td>
+
+                            </tr>
+
+                            <tr class="is-best">
+
+                                <td>L4 GPU</td>
+
+                                <td>1,200 / 200</td>
+
+                                <td>2.12</td>
+
+                                <td>10.87</td>
+
+                                <td>8/9</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>CPU</td>
+
+                                <td>800 / 100</td>
+
+                                <td>15.02</td>
+
+                                <td>423.46</td>
+
+                                <td>6/9</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>L4 GPU</td>
+
+                                <td>800 / 100</td>
+
+                                <td>2.47</td>
+
+                                <td>10.88</td>
+
+                                <td>8/9</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="mt-3 mb-0 small">
+
+                    Source: Table I of the group experiment report (Artifact 7).
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 7 -->
+
+    <section class="bg-white" id="artifact-7">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 7
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    Optimizing RAG Parameters and Comparing CPU and GPU Performance for LendSuri
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>Optimizing RAG Parameters and Comparing CPU and GPU Performance for the LendSuri Online Lending Platform Chatbot</dd>
+
+                    <dt>Authors</dt>
+
+                    <dd>Stephen Rainiel Adame, Mica Ellah Mae Nerido, and Audrey Benjamin Gutierrez (QuantumStack)</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>4 November 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>IEEE-format experiment report, PDF, 3 pages</dd>
+
+                </dl>
+
+                <p>
+
+                    The group experiment combines all three
+                    members&rsquo; datasets into one 379-page corpus and
+                    tests three chunking configurations on nine fixed
+                    questions, three from each member. Each
+                    configuration was run on a High-RAM Colab CPU and on
+                    an NVIDIA L4 GPU, with two timed trials per question
+                    and a correct-and-grounded score for each answer.
+
+                </p>
+
+                <p>
+
+                    On the GPU every configuration answered in about 11
+                    seconds, while the CPU took between 256 and 486
+                    seconds, and the default free-tier CPU did not
+                    finish a single answer in about 40 minutes. The
+                    report recommends 1,200-character chunks with 200
+                    overlap on the L4, and it states plainly that the
+                    CPU and GPU accuracy differences cannot be blamed on
+                    the hardware alone.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <object data="files/finals/ww1-ww2-rag-experiment-report.pdf#view=FitH" type="application/pdf">
+
+                        <div class="artifact-fallback">
+
+                            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+
+                            <p>
+
+                                Your browser cannot display this document inline.
+                                Please use the buttons below to open or download it.
+
+                            </p>
+
+                        </div>
+
+                    </object>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/finals/ww1-ww2-rag-experiment-report.pdf" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Report
+
+                    </a>
+
+                    <a href="files/finals/ww1-ww2-rag-experiment-report.pdf" class="btn-outline-custom" download>
+
+                        Download Report
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+
+                        PDF &middot; 3 pages &middot; 256 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ARTIFACT 8 -->
+
+    <section id="artifact-8">
+
+        <div class="container-custom">
+
+            <div class="glass p-5 fade-up">
+
+                <span class="badge-soft">
+
+                    Artifact 8
+
+                </span>
+
+                <h2 class="mt-4">
+
+                    LendSuri Conversational RAG Chatbot Notebook
+
+                </h2>
+
+                <dl class="artifact-caption">
+
+                    <dt>Title</dt>
+
+                    <dd>QuantumStack LendSuri &mdash; Online Lending Platform RAG-based Chatbot with Conversation History</dd>
+
+                    <dt>Authors</dt>
+
+                    <dd>Stephen Rainiel Adame, Mica Ellah Mae Nerido, and Audrey Benjamin Gutierrez (QuantumStack)</dd>
+
+                    <dt>Date</dt>
+
+                    <dd>November 2026</dd>
+
+                    <dt>Format</dt>
+
+                    <dd>Jupyter notebook, 24 cells, run on a Colab L4 GPU</dd>
+
+                </dl>
+
+                <p>
+
+                    The final LendSuri notebook, built on the generic
+                    RAG chatbot template provided by Dr. Raga. It
+                    indexes the member corpora in Chroma, retrieves the
+                    top three passages, and asks SEA-LION to answer only
+                    from that evidence while listing its sources. One
+                    cell shows the retrieved passages without generating
+                    an answer, so a weak response can be traced to
+                    retrieval or to the model.
+
+                </p>
+
+                <p>
+
+                    The last section adds a chat box that remembers up
+                    to three earlier exchanges, capped at 800 tokens,
+                    with a &ldquo;Show context proof&rdquo; view. The
+                    notebook is careful about its limit: that view shows
+                    earlier messages reached the model, but no follow-up
+                    accuracy test was recorded.
+
+                </p>
+
+                <div class="artifact-frame">
+
+                    <iframe src="files/finals/ww1-ww2-lendsuri-conversational-chat.html"
+                        title="LendSuri Conversational RAG Chatbot Notebook" loading="lazy"></iframe>
+
+                </div>
+
+                <div class="artifact-actions">
+
+                    <a href="files/finals/ww1-ww2-lendsuri-conversational-chat.html" class="btn-primary-custom" target="_blank"
+                        rel="noopener">
+
+                        Open Notebook
+
+                    </a>
+
+                    <a href="files/finals/ww1-ww2-lendsuri-conversational-chat.ipynb" class="btn-outline-custom" download>
+
+                        Download .ipynb
+
+                    </a>
+
+                    <span class="file-meta">
+
+                        <i class="bi bi-journal-code" aria-hidden="true"></i>
+
+                        Jupyter Notebook &middot; 24 cells &middot; 440 KB
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         LEARNING REFLECTION
+    =========================================== -->
+
+    <section class="bg-white" id="reflection">
+
+        <div class="container-custom">
+
+            <div class="section-header fade-up">
+
+                <span>Reflection</span>
+
+                <h2>Final Project Learning Reflection</h2>
+
+                <p>
+
+                    My contributions to the team project, the skills I gained, and
+                    my key personal takeaways from the Finals period.
+
+                </p>
+
+            </div>
+
+            <div class="glass p-5 fade-up">
+
+                <h3>
+
+                    How These Artifacts Demonstrate My Growth
+
+                </h3>
+
+                <p>
+
+                    In the Prelim I tuned my models against validation
+                    scores and only afterwards noticed that the test
+                    scores told a different story. In my critique I
+                    wrote that I should have fixed my selection rule
+                    before running anything. The Midterm proposal
+                    planned to set expected answers in advance. In PT-F2
+                    I finally did it: every one of the eighteen evidence
+                    units was located by its exact text before the first
+                    configuration ran, and the run stopped if a passage
+                    was missing or appeared twice.
+
+                </p>
+
+                <p>
+
+                    I also kept to the rule when it went against me. At
+                    one configuration the top chunk for the Tala
+                    question held 143 of the 150 characters of the
+                    advisory and was still scored a miss under full
+                    containment. A looser threshold would have counted
+                    it, but I had fixed the rule before seeing the
+                    scores, and changing it afterwards would have made
+                    the comparison meaningless. A semester ago I would
+                    have adjusted the metric.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    My Contributions to the Team Project
+
+                </h3>
+
+                <p>
+
+                    I was Member 3 of QuantumStack, and my part of
+                    LendSuri was the Member 3 dataset: 126 pages of
+                    prepared SEC records covering the January 2026
+                    registry snapshot, the 2021 historical list, SEC
+                    advisories, and framework and complaint guidance. In
+                    PT-F2 I found that a repeated running header, page
+                    number, label and disclaimer made up 20.9 percent of
+                    its text (34,368 of 164,290 characters). I removed
+                    them and re-rendered the file one record per page so
+                    the gold pages still applied. A cleaned Member 3
+                    corpus is one of the three member PDFs in the
+                    group&rsquo;s 379-page knowledge base.
+
+                </p>
+
+                <p>
+
+                    I verified the evidence for the three Member 3
+                    questions that came with the dataset package and
+                    wrote six more from the corpus to cover record types
+                    the first three did not use. The group&rsquo;s nine
+                    fixed questions took three from each member&rsquo;s
+                    dataset. In PT-F1 I moved the provided notebook from
+                    FLAN-T5 to our assigned model, SEA-LION, and wrote a
+                    prompt with four rules specific to SEC lending
+                    records, including never attributing an
+                    impersonation advisory to the registered company it
+                    names.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Skills I Gained
+
+                </h3>
+
+                <p>
+
+                    I can now build a retrieval pipeline end to end and
+                    measure it: extract and clean a PDF, chunk it, embed
+                    the chunks with normalised vectors, index them in
+                    FAISS or Chroma, and score retrieval with
+                    Precision@3, Recall@3 and MRR@3 against evidence
+                    fixed in advance. I learned to adapt an open model
+                    to a task as well, loading SEA-LION on a GPU,
+                    counting tokens against a 4,096-token budget, and
+                    writing guardrails into the prompt.
+
+                </p>
+
+                <p>
+
+                    The less obvious skill is statistical. With nine
+                    questions, one relevance decision moves Precision@3
+                    by 0.037, so I added bootstrap confidence intervals
+                    and exact sign tests with a Bonferroni correction.
+                    Those tests are why my report says the ranking from
+                    500 characters up is not settled, instead of naming
+                    a winner the data cannot support.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Key Personal Takeaways
+
+                </h3>
+
+                <p>
+
+                    Retrieval sets the ceiling for the whole system. The
+                    Peso2you question was never answered at any chunk
+                    size, because its record shares the words Peso, Cash
+                    and Loan with dozens of other records and the
+                    retriever kept returning those instead. In PT-F1 the
+                    model refused to answer rather than guess, which is
+                    what the guardrails asked for, but no prompt can fix
+                    evidence that never arrives. The likely fix is a
+                    hybrid retriever that also matches exact names.
+
+                </p>
+
+                <p>
+
+                    How you measure can change what you find. Scoring
+                    relevance by any character overlap instead of full
+                    containment raised Recall@3 by 0.105 at 300
+                    characters and by nothing at 1000 or 1800. If I had
+                    not checked both rules, I would have reported a
+                    chunk-size effect that was partly an effect of my
+                    own scoring rule.
+
+                </p>
+
+                <p>
+
+                    Hardware decides what is practical. In the group
+                    experiment the default free Colab CPU did not finish
+                    one answer in about 40 minutes, while the L4 GPU
+                    answered in about 11 seconds. That gap matters more
+                    for a chatbot people would actually use than any of
+                    the differences between chunk settings.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Critique of My Own Work and What I Would Do Differently
+
+                </h3>
+
+                <p>
+
+                    <strong>My test set was too small again.</strong>
+                    Nine questions could show that the smallest chunks
+                    do worse but could not order the rest; no comparison
+                    survived correction. This is the same weakness I
+                    found in the Prelim with twelve test examples. Next
+                    time I would write thirty or more questions before
+                    tuning anything, as my own report recommends.
+
+                </p>
+
+                <p>
+
+                    <strong>I recommended a size the embedding model
+                    cannot fully read.</strong> all-MiniLM-L6-v2 stops
+                    at 256 word-pieces, and 69 of the 126 pages are
+                    longer than that at 1800 characters. None of my
+                    evidence fell in the cut-off part, but I should have
+                    tested a model with a longer input window before
+                    recommending whole-page chunks.
+
+                </p>
+
+                <p>
+
+                    <strong>The group benchmark kept too little
+                    evidence.</strong> We recorded two timed trials per
+                    question where the guide asked for three, and we did
+                    not save the generated answers. As a result we
+                    cannot explain why the CPU and GPU runs scored
+                    differently. Saving every response transcript would
+                    have cost almost nothing.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Short-Term Goals
+
+                </h3>
+
+                <p>
+
+                    I want to add exact name matching to the dense
+                    retriever and rerun the Peso2you and Mabilis Cash
+                    questions, since those are the failures chunk size
+                    could not fix. I also want to expand the test set
+                    past thirty questions and repeat the
+                    twelve-configuration comparison to see whether the
+                    1800 and 1000 character settings separate with more
+                    data.
+
+                </p>
+
+                <h3 class="mt-5">
+
+                    Long-Term Goals
+
+                </h3>
+
+                <p class="mb-0">
+
+                    Across the Prelim, Midterm and Finals, the work that
+                    I trust most is the work that shows its evidence and
+                    says what it cannot conclude. I want to keep
+                    building systems that way: retrieval that can be
+                    checked line by line, answers that state their dates
+                    and sources, and a model that says it does not know
+                    when the evidence is missing.
 
                 </p>
 
@@ -208,46 +1586,49 @@
     </section>
 
     <!-- ==========================================
-         COURSE OUTPUTS
+         CLOSING
     =========================================== -->
 
-    <section class="bg-white">
+    <section>
 
         <div class="container-custom">
 
-            <div class="section-header fade-up">
+            <div class="glass text-center p-5 fade-up">
 
-                <span>Meanwhile</span>
+                <span class="badge-soft">
 
-                <h2>Earlier Course Outputs</h2>
+                    Thank You
 
-            </div>
+                </span>
 
-            <div class="output-grid">
+                <h2 class="mt-4">
 
-                <a href="prelim.html" class="output-card fade-up">
+                    Continue Exploring My Portfolio
 
-                    <span class="output-period">Prelim</span>
+                </h2>
 
-                    <h3>Neural Networks &amp; NLP</h3>
+                <p class="mt-3">
 
-                    <p>Seven artifacts: a no-code classifier, a Keras rebuild across twenty experiments, and NLP foundations.</p>
+                    Thank you for reviewing my Finals output. You may revisit my
+                    Prelim and Midterm work to follow how LendSuri developed.
 
-                    <span class="output-link">View Prelim Output <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                </p>
 
-                </a>
+                <div class="hero-buttons justify-content-center mt-4">
 
-                <a href="midterm.html" class="output-card fade-up">
+                    <a href="prelim.html" class="btn-outline-custom">
 
-                    <span class="output-period">Midterm</span>
+                        Prelim Output
 
-                    <h3>LendSuri RAG Chatbot</h3>
+                    </a>
 
-                    <p>A group proposal and pitch for a RAG chatbot that explains SEC records on Online Lending Platforms.</p>
+                    <a href="midterm.html" class="btn-primary-custom">
 
-                    <span class="output-link">View Midterm Output <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                        Midterm Output
 
-                </a>
+                    </a>
+
+                </div>
 
             </div>
 

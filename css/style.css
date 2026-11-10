@@ -2088,3 +2088,65 @@ body.dark-mode #backToTop {
         display: none;
     }
 }
+
+/* ---------- Data table (finals results) ---------- */
+
+.table-scroll {
+    margin-top: 20px;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.data-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: .92rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 16px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.data-table th:first-child,
+.data-table td:first-child,
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+    text-align: left;
+}
+
+.data-table thead th {
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.data-table tbody tr {
+    transition: background-color var(--transition);
+}
+
+.data-table tbody tr:hover {
+    background: var(--primary-soft);
+}
+
+.data-table tr.is-best td {
+    font-weight: 600;
+    background: var(--primary-soft);
+}
+
+.data-table tr.is-best td:first-child {
+    box-shadow: inset 3px 0 0 var(--primary);
+}
