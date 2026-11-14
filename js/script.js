@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeScrollProgress();
     initializeIndexSpy();
     initializeHaptics();
+    initializeSubnavSpy();
 
 });
 
@@ -426,5 +427,56 @@ function initializeHaptics() {
         if (event.target.closest(selector)) navigator.vibrate(8);
 
     }, { passive: true });
+
+}
+
+
+/* ==========================================================
+   PERIOD JUMP BAR: HIGHLIGHT THE EXERCISE IN VIEW
+========================================================== */
+
+function initializeSubnavSpy() {
+
+    const bar = document.querySelector(".page-subnav-links");
+
+    if (!bar) return;
+
+    const links = [...bar.querySelectorAll("a[href^='#']")];
+
+    const byId = new Map();
+
+    links.forEach(link => {
+
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if (target) byId.set(target.id, link);
+
+    });
+
+    const setCurrent = link => {
+
+        links.forEach(item => item.classList.remove("is-current"));
+
+        if (!link) return;
+
+        link.classList.add("is-current");
+
+        // keep the current item visible when the bar scrolls sideways on phones
+        const left = link.offsetLeft - bar.offsetLeft - 16;
+        bar.scrollTo({ left: Math.max(left, 0), behavior: "smooth" });
+
+    };
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) setCurrent(byId.get(entry.target.id));
+
+        });
+
+    }, { rootMargin: "-35% 0px -60% 0px" });
+
+    byId.forEach((link, id) => observer.observe(document.getElementById(id)));
 
 }

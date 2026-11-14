@@ -78,6 +78,10 @@ spacing utilities (`mt-4`, `p-5`). Sections alternate between plain and `.bg-whi
 Icons come only from Bootstrap Icons (`<i class="bi bi-…">`). For decorative icons, add
 `aria-hidden="true"`.
 
+## Period system
+
+Each grading period has its own colour: Prelim `--prelim` (blue), Midterm `--midterm` (amber), Finals `--finals` (green), each with `-strong` and `-soft` variants and dark-mode values. Put `class="period-prelim|period-midterm|period-finals"` on `<body>` of a period page and every `--primary` component takes the period colour. Period pages need: `.period-meta` chips in the banner, the sticky `.page-subnav` jump bar (exercise header ids plus `#reflection`), and the reflection as `section.reflection-section > .reflection-body`. Never use a period colour for something that belongs to a different period.
+
 ## Behaviour (js/script.js — don't duplicate it)
 
 - **Dark mode:** `#darkModeToggle` toggles `body.dark-mode` and saves `localStorage.theme`. Every new

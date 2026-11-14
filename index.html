@@ -155,16 +155,13 @@
 
                     <span class="badge-soft">
 
-                        Academic ePortfolio
+                        ITC-C508 &middot; Academic ePortfolio
 
                     </span>
 
-                    <h1>
+                    <h1 class="hero-name">
 
-                        Hi, I'm
-                        <span class="gradient-text">
-                            Audrey Benjamin Gutierrez
-                        </span>
+                        Audrey Benjamin Gutierrez
 
                     </h1>
 
@@ -187,9 +184,9 @@
 
                         </a>
 
-                        <a href="about.html" class="btn-outline-custom">
+                        <a href="reflection.html" class="btn-outline-custom">
 
-                            About Me
+                            Course Reflection
 
                         </a>
 
@@ -225,64 +222,110 @@
 
                 <p>
 
-                    My work for the course, organised by grading period. Each page
-                    captions its artifacts and lets you read or download them.
+                    My work for the course, organised by grading period. Each period has its
+                    own colour, its own page of artifacts, and its own reflection.
 
                 </p>
 
             </div>
 
-            <div class="output-grid">
+            <div class="period-grid">
 
-                <a href="prelim.html" class="output-card fade-up">
+                <article class="period-card period-card--prelim fade-up">
 
-                    <span class="output-period">Prelim</span>
+                    <div class="period-card-top">
 
-                    <h3>Neural Networks &amp; NLP</h3>
+                        <span class="period-tag">Prelim</span>
 
-                    <p>Seven artifacts: a no-code classifier, a Keras rebuild across twenty experiments, and NLP foundations.</p>
+                        <span class="period-count">7 artifacts</span>
 
-                    <span class="output-link">View Prelim Output <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                    </div>
 
-                </a>
+                    <h3><a href="prelim.html">Neural Networks &amp; NLP</a></h3>
 
-                <a href="midterm.html" class="output-card fade-up">
+                    <p>A no-code airline sentiment classifier, its Keras rebuild across twenty experiments, and NLP foundations.</p>
 
-                    <span class="output-period">Midterm</span>
+                    <ul class="period-exercises" aria-label="Prelim exercises"><li>PT-P1</li><li>PT-P2</li><li>WW-P2</li></ul>
 
-                    <h3>RAG Chatbots</h3>
+                    <div class="period-card-actions">
+
+                        <a href="prelim.html" class="period-link">View outputs <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+
+                        <a href="prelim.html#reflection" class="period-link period-link--reflection">Read reflection</a>
+
+                    </div>
+
+                </article>
+
+                <article class="period-card period-card--midterm fade-up">
+
+                    <div class="period-card-top">
+
+                        <span class="period-tag">Midterm</span>
+
+                        <span class="period-count">4 artifacts</span>
+
+                    </div>
+
+                    <h3><a href="midterm.html">RAG Chatbots</a></h3>
 
                     <p>A RAG chatbot over RA 9003 tested for hallucination, and the group proposal and pitch for LendSuri.</p>
 
-                    <span class="output-link">View Midterm Output <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                    <ul class="period-exercises" aria-label="Midterm exercises"><li>PT-M1</li><li>WW-M2</li></ul>
 
-                </a>
+                    <div class="period-card-actions">
 
-                <a href="finals.html" class="output-card fade-up">
+                        <a href="midterm.html" class="period-link">View outputs <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 
-                    <span class="output-period">Finals</span>
+                        <a href="midterm.html#reflection" class="period-link period-link--reflection">Read reflection</a>
 
-                    <h3>Chunking &amp; RAG Tuning</h3>
+                    </div>
 
-                    <p>Two individual chunk size and overlap experiments, and the group&rsquo;s CPU vs GPU tuning of LendSuri with its conversational chatbot.</p>
+                </article>
 
-                    <span class="output-link">View Finals Output <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                <article class="period-card period-card--finals fade-up">
 
-                </a>
+                    <div class="period-card-top">
 
-                <a href="reflection.html" class="output-card fade-up">
+                        <span class="period-tag">Finals</span>
 
-                    <span class="output-period">Reflection</span>
+                        <span class="period-count">8 artifacts</span>
 
-                    <h3>Course Reflection</h3>
+                    </div>
 
-                    <p>What my Prelim, Midterm and Finals work would mean at a support desk, a barangay office, and for a borrower checking a loan app.</p>
+                    <h3><a href="finals.html">Chunking &amp; RAG Tuning</a></h3>
 
-                    <span class="output-link">Read the Course Reflection <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+                    <p>Two chunk size and overlap experiments on my dataset, and the group&rsquo;s CPU vs GPU tuning of LendSuri.</p>
 
-                </a>
+                    <ul class="period-exercises" aria-label="Finals exercises"><li>PT-F1</li><li>PT-F2</li><li>WW-F1 &amp; F2</li></ul>
+
+                    <div class="period-card-actions">
+
+                        <a href="finals.html" class="period-link">View outputs <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+
+                        <a href="finals.html#reflection" class="period-link period-link--reflection">Read reflection</a>
+
+                    </div>
+
+                </article>
 
             </div>
+
+            <a href="reflection.html" class="course-reflection-strip fade-up">
+
+                <span class="period-tag period-tag--neutral">Whole course</span>
+
+                <span class="course-reflection-text">
+
+                    <strong>Course Reflection</strong>
+
+                    <span>What each period&rsquo;s work would mean outside the classroom.</span>
+
+                </span>
+
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+            </a>
 
         </div>
 
@@ -312,15 +355,9 @@
 
             </div>
 
-            <div class="row align-items-center g-5">
+            <div class="row justify-content-center">
 
-                <div class="col-lg-6 fade-up">
-
-                    <img src="images/profile.jpg" alt="Profile Picture" class="img-fluid rounded-4 shadow-soft">
-
-                </div>
-
-                <div class="col-lg-6 fade-up">
+                <div class="col-lg-8 text-center fade-up">
 
                     <h3>
 

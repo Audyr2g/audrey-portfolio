@@ -2150,3 +2150,465 @@ body.dark-mode #backToTop {
 .data-table tr.is-best td:first-child {
     box-shadow: inset 3px 0 0 var(--primary);
 }
+
+/* ==========================================================
+   PERIOD SYSTEM (November 2026 redesign)
+   Each grading period has its own colour so a reader can tell
+   Prelim, Midterm and Finals apart at a glance: in the menu,
+   on the home cards, in each page's banner, jump bar and
+   reflection. Period pages set body.period-* and every
+   component that uses --primary picks the colour up.
+========================================================== */
+
+:root {
+    --prelim: #2563EB;
+    --prelim-strong: #1D4ED8;
+    --prelim-soft: rgba(37, 99, 235, .08);
+    --midterm: #B45309;
+    --midterm-strong: #92400E;
+    --midterm-soft: rgba(180, 83, 9, .08);
+    --finals: #047857;
+    --finals-strong: #065F46;
+    --finals-soft: rgba(4, 120, 87, .08);
+}
+
+body.dark-mode {
+    --prelim: #60A5FA;
+    --prelim-strong: #93C5FD;
+    --prelim-soft: rgba(96, 165, 250, .12);
+    --midterm: #FBBF24;
+    --midterm-strong: #FCD34D;
+    --midterm-soft: rgba(251, 191, 36, .12);
+    --finals: #34D399;
+    --finals-strong: #6EE7B7;
+    --finals-soft: rgba(52, 211, 153, .12);
+}
+
+body.period-prelim {
+    --primary: var(--prelim);
+    --secondary: var(--prelim-strong);
+    --primary-soft: var(--prelim-soft);
+}
+
+body.period-midterm {
+    --primary: var(--midterm);
+    --secondary: var(--midterm-strong);
+    --primary-soft: var(--midterm-soft);
+}
+
+body.period-finals {
+    --primary: var(--finals);
+    --secondary: var(--finals-strong);
+    --primary-soft: var(--finals-soft);
+}
+
+html {
+    scroll-padding-top: 140px;
+}
+
+/* ---------- Menu: a colour dot per period ---------- */
+
+.navbar-nav .nav-link[href="prelim.html"]::before,
+.navbar-nav .nav-link[href="midterm.html"]::before,
+.navbar-nav .nav-link[href="finals.html"]::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 6px;
+    border-radius: 50%;
+    vertical-align: 1px;
+}
+
+.navbar-nav .nav-link[href="prelim.html"]::before { background: var(--prelim); }
+.navbar-nav .nav-link[href="midterm.html"]::before { background: var(--midterm); }
+.navbar-nav .nav-link[href="finals.html"]::before { background: var(--finals); }
+
+/* ---------- Home hero: plain, no glow or grid ---------- */
+
+.hero {
+    min-height: auto;
+    padding: calc(var(--navbar-height) + 72px) 0 72px;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
+}
+
+.hero::before {
+    display: none;
+}
+
+.hero-name {
+    margin: 18px 0 0;
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+}
+
+img.hero-image {
+    max-width: 360px;
+}
+
+/* ---------- Period banner ---------- */
+
+body[class*="period-"] .page-banner {
+    border-top: 4px solid var(--primary);
+    background:
+        linear-gradient(180deg, var(--primary-soft), transparent 75%),
+        var(--background);
+}
+
+.period-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+}
+
+.period-meta-count {
+    margin-right: 6px;
+    color: var(--text);
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.period-chip {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: .85rem;
+    font-weight: 500;
+    transition: border-color var(--transition), color var(--transition), transform .15s var(--ease-out);
+}
+
+.period-chip:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.period-chip:active {
+    transform: scale(.97);
+}
+
+.period-chip--reflection,
+.period-chip--reflection:hover {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+body.dark-mode .period-chip--reflection {
+    color: #0F172A;
+}
+
+/* ---------- Sticky jump bar on period pages ---------- */
+
+.page-subnav {
+    position: sticky;
+    top: 72px;
+    z-index: 900;
+    background: rgba(255, 255, 255, .94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark-mode .page-subnav {
+    background: rgba(15, 23, 42, .94);
+}
+
+.page-subnav .container-custom {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 54px;
+}
+
+.page-subnav-label {
+    flex-shrink: 0;
+    padding-right: 16px;
+    border-right: 1px solid var(--border);
+    color: var(--primary);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.page-subnav-links {
+    display: flex;
+    flex: 1;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.page-subnav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.page-subnav-links a {
+    flex-shrink: 0;
+    padding: 7px 12px;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: .86rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.page-subnav-links a:hover {
+    background: var(--primary-soft);
+    color: var(--text);
+}
+
+.page-subnav-links a.is-current {
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.page-subnav-links .page-subnav-reflection {
+    margin-left: auto;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.page-subnav-links .page-subnav-reflection.is-current {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+body.dark-mode .page-subnav-links .page-subnav-reflection.is-current {
+    color: #0F172A;
+}
+
+/* ---------- Reflection: its own block on every period page ---------- */
+
+.reflection-section,
+.reflection-section.bg-white {
+    background:
+        linear-gradient(var(--primary-soft), var(--primary-soft)),
+        var(--background) !important;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.reflection-section .section-header span {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+body.dark-mode .reflection-section .section-header span {
+    color: #0F172A;
+}
+
+.reflection-body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 44px 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.reflection-body p {
+    color: var(--text);
+    font-size: 1.02rem;
+    line-height: 1.85;
+}
+
+.reflection-body p + p {
+    margin-top: 1.1rem;
+}
+
+/* ---------- Home: one card per period ---------- */
+
+.period-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.period-card {
+    --pc: var(--prelim);
+    --pc-soft: var(--prelim-soft);
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--pc);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.period-card--midterm { --pc: var(--midterm); --pc-soft: var(--midterm-soft); }
+.period-card--finals { --pc: var(--finals); --pc-soft: var(--finals-soft); }
+
+.period-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.period-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.period-tag {
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--pc-soft);
+    color: var(--pc);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.period-tag--neutral {
+    background: rgba(100, 116, 139, .12);
+    color: var(--text);
+}
+
+.period-count {
+    color: var(--text-light);
+    font-size: .85rem;
+}
+
+.period-card h3 {
+    margin: 18px 0 8px;
+}
+
+.period-card h3 a {
+    color: var(--text);
+    transition: color var(--transition);
+}
+
+.period-card h3 a:hover {
+    color: var(--pc);
+}
+
+.period-card > p {
+    flex: 1;
+    font-size: .95rem;
+}
+
+.period-exercises {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 4px 0 20px;
+    padding: 0;
+}
+
+.period-exercises li {
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-light);
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.period-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.period-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--pc);
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.period-link i {
+    transition: transform var(--transition);
+}
+
+.period-link:hover {
+    color: var(--pc);
+}
+
+.period-link:hover i {
+    transform: translateX(4px);
+}
+
+.period-link--reflection {
+    color: var(--text-light);
+    text-decoration: underline;
+    text-decoration-color: var(--pc);
+    text-underline-offset: 4px;
+}
+
+.course-reflection-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 24px;
+    padding: 22px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    color: var(--text);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.course-reflection-strip:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-light);
+    box-shadow: var(--shadow-md);
+    color: var(--text);
+}
+
+.course-reflection-strip:active {
+    transform: scale(.99);
+}
+
+.course-reflection-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.course-reflection-text strong {
+    font-size: 1.05rem;
+}
+
+.course-reflection-text span {
+    color: var(--text-light);
+    font-size: .92rem;
+}
+
+/* ---------- Course Reflection page: cards in period colours ---------- */
+
+.page-course-reflection #prelim { --primary: var(--prelim); --primary-soft: var(--prelim-soft); }
+.page-course-reflection #midterm { --primary: var(--midterm); --primary-soft: var(--midterm-soft); }
+.page-course-reflection #finals { --primary: var(--finals); --primary-soft: var(--finals-soft); }
+
+.page-course-reflection #prelim .glass,
+.page-course-reflection #midterm .glass,
+.page-course-reflection #finals .glass {
+    border-top: 4px solid var(--primary);
+}
+
+.page-course-reflection #prelim .glass p,
+.page-course-reflection #midterm .glass p,
+.page-course-reflection #finals .glass p {
+    color: var(--text);
+}
